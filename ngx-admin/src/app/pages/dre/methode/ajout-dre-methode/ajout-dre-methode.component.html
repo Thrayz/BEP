@@ -1,0 +1,138 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card class="inline-form-card">
+            <nb-card-header>
+                <div class="header-title">DEMANDE DE RETOUCHE EXCEPTIONNELLE</div>
+                <div class="">
+                    <div style="margin: 16px 60px;" class="row">
+                        <div class="col-3 yellow-space header-col ">
+                            <p>Matériel(s) (désignation) :</p>
+                        </div>
+                        <div class="col-3 header-col ">
+                            <p>{{anomalie?.designation}}</p>
+                        </div>
+                        <div class="col-3 yellow-space header-col ">
+                            <p>code article :</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col ">
+                            <p>{{anomalie?.codeArticle}}</p>
+                        </div>
+                        <div class="col-3 yellow-space header-col ">
+                            <p>P/N :</p>
+                        </div>
+                        <div class="col-3 header-col ">
+                            <p>{{anomalie?.partNumber}}</p>
+                        </div>
+                        <div class="col-3 yellow-space header-col ">
+                            <p>S/N :</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col ">
+                            <p>{{anomalie?.sn}}</p>
+                        </div>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <div class="form-title">
+                    Demande de retouche exceptionnelle (METHODE)
+                </div>
+                <form [formGroup]="methodeDreForm" class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-5 yellow-space header-col ">
+                            <p>Non-conformité associé :<br><small>(joindre copie de la Fiche NC)</small></p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-7 header-col nopadding">
+                            <input formControlName="ncassocier" class="input-conf" type="text" nbInput fullWidth
+                                placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-5 yellow-space header-col ">
+                            <p>Résumé de la solution de retouche :<br><small>(Résumé de la solution proposée détaillée
+                                    en p. 2)</small></p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-7 header-col nopadding">
+                            <input formControlName="resumerSolution" class="input-conf" type="text" nbInput fullWidth
+                                placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>CDS article :</p>
+                        </div>
+                        <div class="col-2 header-col nopadding">
+                            <input formControlName="cds" class="input-conf" type="text" nbInput fullWidth
+                                placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>Montant des dérives :</p>
+                        </div>
+                        <div class="col-2 header-col nopadding">
+                            <input formControlName="montantDerives" class="input-conf" type="text" nbInput fullWidth
+                                placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>Coût estimé (MO+MP) :</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-2 header-col nopadding">
+                            <input formControlName="coutEstimer" class="input-conf" type="text" nbInput fullWidth
+                                placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Demandeur : <br> (Nom, Fonction)</p>
+                        </div>
+                        <div class="col-3 header-col nopadding d-flex align-items-center">
+                            <p>{{currentUser.nom + " " + currentUser.prenom}}</p>
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p>
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;"
+                                    class="col-6 header-col nopadding d-flex align-items-center">
+                                    <p>{{currentDate | date:"dd/MM/yyyy"}}</p>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p>
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;"
+                                    class="col-6 header-col signature-field-container nopadding">
+                                    <img [src]="getImageUrl(currentUser.signature)" alt="" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin: 0px auto;">
+                        <button (click)="onSubmit()" class="" nbButton status="primary" [disabled]="selectedFiles.length <= 0">Submit</button>
+                        <button class="ml-3" nbButton status="basic" (click)="openWindow(contentTemplate)">Ajouter vos
+                            piéces jointes</button>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+<ng-template style="width: 70%;" #contentTemplate let-data>
+    <p style="width: 640px;">
+        {{ data.text }}
+    </p>
+    <div class="files-container">
+        <div class="importedFiles-container-gpt">
+            <div (click)="triggerFileInput()" class="files-add add-files-card">
+                <!-- Add the event handler to the icon -->
+                <i class="fa fa-plus" ></i>
+                <p>Ajouter un fichier</p>
+                <input type="file" id="fileInput" accept=".pdf, .docx, .jpg, .png" style="display: none"
+                    (change)="onFileSelected($event)" multiple />
+
+            </div>
+            <div *ngFor="let fileUrl of fileUrls; let i = index" class="display-files-gpt">
+                <div class="display-files-gpt-container">
+                    <i style="font-size: 50px;" class="fa fa-file"></i>
+                    <div class="file-link-container">
+                    <i class="far fa-hand-point-right mr-2"></i><a [href]="fileUrl" target="_blank" [download]="selectedFiles[i].name">{{ selectedFiles[i].name }}</a>
+                    </div>
+                </div>
+                <i (click)="removeFile(i)" style="cursor:pointer;font-size: 15px;color: grey;" class="fa fa-times"></i>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>
+    </div>
+</ng-template>

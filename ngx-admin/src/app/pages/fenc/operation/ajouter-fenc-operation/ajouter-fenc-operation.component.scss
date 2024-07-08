@@ -1,0 +1,417 @@
+
+
+.form-label{
+    justify-content: normal !important;
+}
+
+.row-conf{
+    width: 100% !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.input-conf{
+    width: 100% !important;
+    max-width: none !important;
+    border: 1px solid #7f94a6 !important;
+    border-radius: 0.25rem;
+    margin: 3px 0px 15px 0px;
+}
+
+
+:host ::ng-deep nb-stepper .step-content {
+    text-align: center;
+  
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+
+  .table-row {
+    border: 1px solid #67737f
+  }
+  .table-row > .col, .col-md-4 {
+    padding: 10px 17px;
+  }
+
+  .Decision-column{
+    background-color: rgba(198,217,241,0.7);
+  }
+
+  .Justification-column{
+    background-color: rgba(255,255,153,0.7);
+  }
+
+  .Matirise-column{
+    background-color: rgba(255,204,255,0.7);
+  }
+
+  .validation-column{
+    background-color: rgba(204,255,204,0.7);
+  }
+
+  .table-doc-reference{
+    text-align: initial;
+  }
+
+  .signature-table{
+    position: relative;
+    margin: 16px 25px 10px 25px;
+  }
+
+  .signature-table .col{
+    background-color: white;
+  }
+
+  .signature-name-field-container div[contentEditable=true] {
+    outline: none;
+  }
+  .signature-name-field:focus{
+    border: none;
+  }
+
+  .mat-datepicker-popup{
+    bottom: 217.7px;
+    background-color: #ddebf1;
+    border: 2px solid #24a5d6;
+    border-radius: 10px;
+    left: 853.438px;
+    padding: 16px 4px;
+  }
+
+  .mat-datepicker {
+    background-color: #f1f1f1;
+  }
+
+  .icon-calender-signature{
+    color: rgb(194, 194, 194);
+    cursor:pointer
+    
+  }
+
+  .datepicker-input-conf{
+    border: none;
+  }
+
+  .confirmation button{
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+
+  }
+
+
+  .button-Decision {
+    border-radius: 5px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .button-Decision:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .blue {
+    background-color: #3599e6;
+    box-shadow: 0px 5px 0px 0px #137fd2;
+  }
+  
+  .blue:hover {
+    background-color: #48b6ff;
+  }
+
+  .grey {
+    background-color: #a3a3a3;
+    box-shadow: 0px 5px 0px 0px #7d7d7d
+  }
+  
+  .grey:hover {
+    background-color: #b4b4b4;
+  }
+
+
+  .nb-window-title .nb-window-close {
+    display: none;
+  }
+
+  .buttons button{
+    display:none
+  }
+
+
+
+  //////////////// hackathon //////////////////
+  
+  .team-container-gpt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .team-member-gpt {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 260px;
+    height: 360px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .team-member-gpt:hover {
+    transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+  }
+
+  .image-member {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+  }
+
+  .image-member-mark {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 4px solid #00B6E1;
+  }
+
+  .team-member-gpt p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #999;
+  }
+  
+  .team-member-gpt p:first-of-type {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .team-member-gpt p:last-of-type {
+    margin-bottom: 10px;
+  }
+
+  .team-member-details-gpt{
+    height: 210px;
+    overflow: scroll;
+  }
+
+
+  /****************** leader ***************/
+  .importedFiles-container-gpt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .display-files-gpt {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 183px;
+    height: 177px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+
+  .display-files-gpt-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    word-break: break-word;
+    margin: auto;
+  }
+  
+  .display-files-gpt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .display-files-gpt-mark img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 4px solid #0095ff;
+  }
+
+  .display-files-gpt img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .display-files-gpt .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  
+  
+  .display-files-gpt p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #999;
+  }
+  
+  .display-files-gpt p:first-of-type {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .display-files-gpt p:last-of-type {
+    margin-bottom: 10px;
+  }
+  
+  .display-files-gpt-button {
+    background-color: #d51e1ed6;
+    border: 2px solid #d51e1ed6;
+    color: white;
+    border-color: white;
+    padding: 10px 14px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "michroma";
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 21px 0px 5px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+  
+  .display-files-gpt-button:hover {
+    background-color: #fff;
+    color: #d51e1ed6;
+    border: 2px solid #d51e1ed6;
+    cursor: pointer;
+  }
+
+
+  .files-add.add-files-card {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .files-add.add-files-card i {
+    font-size: 48px;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+  
+  .files-add.add-files-card p {
+    font-size: 1.1rem;
+    color: #bbb;
+    margin: 0;
+  }
+  
+  .files-add.add-files-card:hover {
+    background-color: #eee;
+  }
+  
+  .files-add.add-files-card:hover i {
+    color: #555;
+  }
+
+  
+  .files-add {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 183px;
+    height: 177px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .files-add i {
+    font-size: 37px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  .files-add p {
+    font-size: 13px;
+    margin: 5px 0;
+    color: #999;
+    text-align: center;
+  }
+  
+  .files-add p:first-of-type {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .team-leader-member-details-gpt{
+    height: 210px;
+    overflow: scroll;
+  }
+
+  .my-workshop-container p strong {
+    color:#898989
+  }
+
+  .my-workshop-container p span {
+    word-break: break-all;
+  }
+
+  .signature-field-container img{
+    width: 160px;
+    height: 77px;
+  }

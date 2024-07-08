@@ -1,0 +1,226 @@
+<div class="FENC-file" id="page1-div" style="position: relative; margin-left: 80px; width: 850px">
+    <div class="container container-style">
+        <div id="htmlData">
+            <img class="image1" width="793.7" height="1122.5" src="/assets/fiches/ficheFENC.png"
+                alt="background image" />
+                <p class="Numero">
+                    {{ "N° "+FENC_data.idAnomalie }}
+                </p>
+            <p class="code-article">
+                {{ FENC_data.codeArticle }}
+            </p>
+            <p class="part-number">{{ FENC_data.partNumber }}</p>
+            <p class="designation">{{ FENC_data.designation }}</p>
+            <p class="date-detection">
+                {{ FENC_data.dateDetection | date : "dd/MM/yyyy" }}
+            </p>
+            <p class="lieu-detection">{{ FENC_data.lieuDetection }}</p>
+            <p class="qui-detecter">{{ FENC_data.quiDetecter }}</p>
+            <p class="sn">{{ FENC_data.sn }}</p>
+            <p class="of">{{ FENC_data.of }}</p>
+            <p class="quantite">{{ FENC_data.quantite }}</p>
+            <p class="ecart-detecter">{{ FENC_data.typeEcart }}</p>
+            <p class="probleme">{{ FENC_data.standard }}</p>
+            <p class="zone-impact">{{ FENC_data.zone }}</p>
+            <p class="comment-ecart-detecter">{{ FENC_data.typeDetection }}</p>
+            <p *ngIf="FENC_data?.nonConformite == false" class="checkbox nom-conformité-non">
+                X
+            </p>
+            <p *ngIf="FENC_data?.nonConformite" class="checkbox nom-conformité-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.securisation" class="checkbox securisation-oui">X</p>
+            <p *ngIf="FENC_data?.securisation == false" class="checkbox securisation-non">
+                X
+            </p>
+
+            <!-- Decision -->
+
+            <p *ngIf="FENC_data.decision?.rebut" class="checkbox-decision rebut">X</p>
+            <p *ngIf="FENC_data.decision?.retoucheDonnees" class="checkbox-decision retoucheDonnees">
+                X
+            </p>
+            <p *ngIf="FENC_data.decision?.retoucheDre" class="checkbox-decision retoucheDre">
+                X
+            </p>
+            <p *ngIf="FENC_data.decision?.aucuneAction" class="checkbox-decision aucuneAction">
+                X
+            </p>
+            <p class="refRetoucheDonnees">
+                {{ FENC_data.decision?.refRetoucheDonnees }}
+            </p>
+            <p class="refDre">{{ FENC_data.decision?.refRetoucheDre }}</p>
+
+            <p class="nom-decision">{{ FENC_data.decision?.nom }}</p>
+            <p class="date-decision">{{ FENC_data.decision?.date | date:"dd/MM/yyyy" }}</p>
+
+            <img [src]="signatureBlobDecision" class="signature-decision" alt="" />
+            
+
+
+            <!-- Justification -->
+
+            <p class="justification">{{ FENC_data?.justification?.justification }}</p>
+            <p class="limitation">{{ FENC_data?.justification?.limitation }}</p>
+            
+            <p class="nom-justification">{{ FENC_data.justification?.nom }}</p>
+            <p class="date-justification">{{ FENC_data.justification?.date | date:"dd/MM/yyyy" }}</p>
+
+            
+            <img [src]="signatureBlobJustification" class="signature-justification" alt="" />
+
+            <!-- Validation Navigation -->
+
+            <p *ngIf="FENC_data?.validationNav?.derogationProduit" class="checkbox-decision derogationProduit-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.validationNav?.derogationProduit == false"
+                class="checkbox-decision derogationProduit-non">
+                X
+            </p>
+            <p class="justificationNav">
+                {{ FENC_data?.validationNav?.justification }}
+            </p>
+            <p *ngIf="FENC_data?.validationNav?.occurenceReport" class="checkbox-decision or-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.validationNav?.occurenceReport == false" class="checkbox-decision or-non">
+                X
+            </p>
+
+            <p class="nom-validationNav">{{ FENC_data.validationNav?.nom }}</p>
+            <p class="date-validationNav">{{ FENC_data.validationNav?.date | date:"dd/MM/yyyy" }}</p>
+
+            <img [src]="signatureBlobValidationNav" class="signature-validationNav" alt="" />
+
+            <!-- maitrise -->
+
+            <p *ngIf="FENC_data?.maitrise?.fencTransmettre" class="checkbox-decision FENCTransmettre">
+                X
+            </p>
+            <p *ngIf="FENC_data?.maitrise?.inspectionRecord" class="checkbox-decision inspection">
+                X
+            </p>
+            <p *ngIf="FENC_data?.maitrise?.planSurveillance" class="checkbox-decision planSurveillance">
+                X
+            </p>
+            <p *ngIf="FENC_data?.maitrise?.resolutionProbleme" class="checkbox-decision rdp">
+                X
+            </p>
+            <p *ngIf="FENC_data?.maitrise?.aucunSuivi" class="checkbox-decision aucunSuivi">
+                X
+            </p>
+            <p *ngIf="FENC_data?.maitrise?.derogationProduitLivrable"
+                class="checkbox-decision derogationProduitLivrable">
+                X
+            </p>
+
+            <p class="nom-maitrise">{{ FENC_data.maitrise?.nom }}</p>
+            <p class="date-maitrise">{{ FENC_data.maitrise?.date | date:"dd/MM/yyyy" }}</p>
+
+            <img [src]="signatureBlobMaitrise" class="signature-maitrise" alt="" />
+        </div>
+    </div>
+    <div class="confirmation">
+        <button (click)="downloadFENCPdf()" type="submit" class="btn button-Decision blue effect">
+            Imprimer FENC en fichier PDF
+        </button>
+    </div>
+</div>
+<br><br>
+<div *ngIf="FENC_data?.demandeRetouche?.idDemandeRetouche" class="FENC-file" id="page1-div" style="position: relative; margin-left: 80px; width: 850px">
+    <div class="container container-style">
+        <div id="htmlDataDre">
+            <img class="image1" width="793.7" height="1122.5" src="/assets/fiches/DRE-pdf-1.png"
+                alt="background image" />
+            <p class="DRE-designation">
+                {{ FENC_data?.designation }}
+            </p>
+            <p class="DRE-codeArticle">{{ FENC_data.codeArticle }}</p>
+            <p class="DRE-pn">{{ FENC_data.partNumber }}</p>
+            <p class="DRE-sn">
+                {{ FENC_data.sn}}
+            </p>
+            <p class="DRE-nonConformite">{{ FENC_data?.demandeRetouche?.ncassocier }}</p>
+            <p class="DRE-resumer">{{ FENC_data?.demandeRetouche?.resumerSolution }}</p>
+            <p class="DRE-cds">{{ FENC_data?.demandeRetouche?.cds }}</p>
+            <p class="DRE-montant">{{ FENC_data?.demandeRetouche?.montantDerives }}</p>
+            <p class="DRE-cout">{{ FENC_data?.demandeRetouche?.coutEstimer }}</p>
+            <p class="DRE-demandeur">{{ FENC_data?.demandeRetouche?.demandeur }}</p>
+            <p class="DRE-dr-date">{{ FENC_data?.demandeRetouche?.date | date: "dd/MM/yyyy" }}</p>
+            <img [src]="signatureBlobDemandeRetouche" class="DRE-dr-signature" alt="" />
+            
+
+            <!--    -->
+            <p *ngIf="FENC_data?.demandeRetouche?.processIdentique == false || true" class="checkbox DRE-vt-process-non">
+                X
+            </p>
+            <p *ngIf="FENC_data?.demandeRetouche?.processIdentique|| true" class="checkbox DRE-vt-process-oui">
+                X
+            </p>
+            <!--    -->
+
+            <!--    -->
+            <p *ngIf="FENC_data?.demandeRetouche?.materiauxIdentique|| true" class="checkbox DRE-vt-materiaux-oui">X</p>
+            <p *ngIf="FENC_data?.demandeRetouche?.materiauxIdentique == false|| true" class="checkbox DRE-vt-materiaux-non">
+                X
+            </p>
+            <!--    -->
+
+            <!--    -->
+            <p *ngIf="FENC_data?.demandeRetouche?.maintenanceIdentique|| true" class="checkbox DRE-vt-interchangeabilité-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.demandeRetouche?.maintenanceIdentique == false|| true" class="checkbox DRE-vt-interchangeabilité-non">
+                X
+            </p>
+            <!--    -->
+
+            <!--    -->
+            <p *ngIf="FENC_data?.demandeRetouche?.conclusion|| true" class="checkbox DRE-vt-conclusion-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.demandeRetouche?.conclusion == false|| true" class="checkbox DRE-vt-conclusion-non">
+                X
+            </p>
+            <!--    -->
+
+            <!--    -->
+            <p *ngIf="FENC_data?.demandeRetouche?.verificationNecessaire|| true" class="checkbox DRE-vt-retouche-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.demandeRetouche?.verificationNecessaire == false|| true" class="checkbox DRE-vt-retouche-non">
+                X
+            </p>
+            <!--    -->
+
+            <p class="DRE-vt-commentaire">{{ FENC_data?.demandeRetouche?.commentaires }}</p>
+            <p class="DRE-vt-verificateur">{{ FENC_data?.demandeRetouche?.verficateur }}</p>
+            <p class="DRE-vt-date">{{ FENC_data?.demandeRetouche?.date | date :"dd/MM/yyyy" }}</p>
+            <img [src]="signatureBlobVerificationTechnique" class="DRE-vt-signature" alt="" />
+
+
+            <!-- Prise en compte -->
+            <p *ngIf="FENC_data?.priseEncompte?.priseEncompte|| true" class="checkbox DRE-pc-priseEnCompte-oui">
+                X
+            </p>
+            <p *ngIf="FENC_data?.priseEncompte?.priseEncompte == false|| true" class="checkbox DRE-pc-priseEnCompte-non">
+                X
+            </p>
+            <p class="DRE-pc-commentaire">{{ FENC_data?.priseEncompte?.commentaires }}</p>
+            <p class="DRE-pc-qualite">{{ FENC_data?.priseEncompte?.qualiteProduit }}</p>
+            <p class="DRE-pc-date">{{ FENC_data?.priseEncompte?.date | date : "dd/MM/yyyy" }}</p>
+            <img [src]="signatureBlobPriseEnCompte" class="DRE-pc-signature" alt="" />
+
+
+            <!-- -------------- -->
+
+            
+        </div>
+    </div>
+    <div class="confirmation">
+        <button (click)="downloadDREPdf()" type="submit" class="btn button-Decision blue effect">
+            Imprimer FENC en fichier PDF
+        </button>
+    </div>
+</div>

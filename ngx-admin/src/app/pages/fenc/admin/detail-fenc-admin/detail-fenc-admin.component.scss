@@ -1,0 +1,46 @@
+:host ::ng-deep nb-stepper .step-content {
+    text-align: center;
+  
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+
+  .table-row {
+    border: 1px solid #67737f
+  }
+  .table-row > .col, .col-md-4 {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+  }
+
+  .Decision-column{
+    background-color: rgba(198,217,241,0.7);
+  }
+
+  .Justification-column{
+    background-color: rgba(255,255,153,0.7);
+  }
+
+  .Matirise-column{
+    background-color: rgba(255,204,255,0.7);
+  }
+
+  .validation-column{
+    background-color: rgba(204,255,204,0.7);
+  }
+
+  .table-doc-reference{
+    text-align: initial;
+  }
+
+  .signature-table{
+    position: relative;
+    margin: 16px 25px 10px 25px;
+  }
+
+  .signature-table .col{
+    background-color: white;
+  }
+

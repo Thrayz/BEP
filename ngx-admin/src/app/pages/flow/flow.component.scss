@@ -1,0 +1,510 @@
+
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .show-grid {
+    .row {
+      margin: -0.5rem;
+    }
+
+    div[class^=col-] {
+      padding: 0.5rem;
+      box-sizing: border-box;
+
+      div {
+        text-align: center;
+        background-color: #f7fbff;
+        border: 2px solid #1767ad;
+        padding: 0.75rem 0.25rem;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+
+  .grid-h {
+    margin-top: 1.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .table-responsive {
+    margin-top: 1rem;
+  }
+}
+
+.flow-card p{
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  ol {
+    list-style: none;
+  }
+  
+  .rectangle {
+    border-radius: 9px;
+    border: 2px solid #adadad;
+    position: relative;
+    padding: 18px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .current-flow .rectangle {
+    border-radius: 9px;
+    border: 3px solid #adadad;
+    position: relative;
+    padding: 18px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .rectangle-currentFlow-service {
+    border-radius: 9px;
+    border: 2px solid #adadad;
+    position: relative;
+    padding: 12px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .flow-container {
+    margin: 40px 0px;
+    width: 100%;
+  }
+
+  .flow-container p{
+    font-size: 14px !important;
+    font-weight: 600;
+  }
+
+  .calque{
+
+    background-color: #f9f9f9;
+    width: 1110px;
+    height: 700px;
+    overflow: auto;
+    border: 1px solid #888888;
+    margin: 24px 0px;
+    border-radius: 2px;
+
+  }
+
+  .calque-container{
+    width: 130%;
+  }
+
+
+
+  /* Current fFlow STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .current-flow .level-1-current-flow-done-container {
+    width: 22%;
+    height: 48%;
+    margin: 26px 0px 60px 33px;
+    background: #ffffff;
+    
+  }
+
+  .current-flow .level-1-current-flow-doing-container {
+    width: 22%;
+    height: 48%;
+    margin: 26px 0px 60px 33px;
+    background: #ffffff;
+  }
+
+  .current-flow .level-1-current-flow-waiting-container {
+    width: 22%;
+    height: 48%;
+    margin: 26px 0px 60px 33px;
+    background: #ffffff;
+  }
+
+  .current-flow .level-1-current-flow-done {
+    margin:0px 0px 17px 0px;
+  }
+
+  .current-flow .level-1-current-flow-doing {
+    margin:0px 0px 17px 0px;
+  }
+
+  .current-flow .level-1-current-flow-waiting {
+    margin:0px 0px 17px 0px;
+  }
+  
+  .current-flow .level-1-current-flow-done::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 100.5%;
+    width: 12%;
+    height: 3px;
+    background: black;
+  }
+
+  .current-flow .level-1-current-flow-doing::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 100.5%;
+    width: 12%;
+    height: 3px;
+    background: black;
+  }
+
+  .current-flow .level-1-current-flow-doing::after {
+    content: "";
+    position: absolute;
+    top: 27px;
+    right: 100.5%;
+    width: 12%;
+    height: 3px;
+    background: black;
+  }
+  
+  .current-flow .level-1-current-flow-waiting::after {
+    content: "";
+    position: absolute;
+    top: 27px;
+    right: 100.5%;
+    width: 12%;
+    height: 3px;
+    background: black;
+  }
+
+  .current-flow .level-1-current-flow-done-service::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+
+  .current-flow .level-1-current-flow-doing-service::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+
+
+  
+  
+  /* LEVEL-1 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-1 {
+    width: 22%;
+    margin: 0px auto 60px auto;
+    background: #ffffff;
+  }
+  
+  .level-1::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 64px;
+    background: black;
+  }
+  
+  
+  /* LEVEL-2 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-2-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 81px 0px;
+  }
+  
+  .level-2-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 12.5%;
+    width: 75%;
+    height: 2px;
+    background: black;
+  }
+  
+  .level-2-wrapper::after {
+    display: none;
+    content: "";
+    position: absolute;
+    left: -20px;
+    bottom: -20px;
+    width: calc(100% + 20px);
+    height: 2px;
+    background: black;
+  }
+  
+  .level-2-wrapper li {
+    position: relative;
+  }
+  
+  .level-2-wrapper > li::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+  
+  .level-2 {
+    width: 70%;
+    margin: 0 auto 40px;
+    background: rgba(198, 217, 241, 0.7);
+  }
+  
+  .level-2::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+  
+  .level-2::after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-100%, -50%);
+    width: 20px;
+    height: 2px;
+    background: black;
+  }
+  
+  
+  /* LEVEL-3-grid2 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-3-grid2-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    width: 90%;
+    margin: 61px auto;
+  }
+  
+  .level-3-grid2-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: calc(25% - 5px);
+    width: calc(50% + 10px);
+    height: 2px;
+    background: black;
+  }
+  
+  .level-3-grid2-wrapper > li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+  
+  .level-3-grid2 {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 153, 0.7);
+  }
+
+  .level-3-grid2::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+
+  /* LEVEL-3 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-3-wrapper {
+    position: relative;
+    width: 90%;
+    margin: -22px auto;
+  }
+  
+  .level-3 {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 153, 0.7);
+  }
+
+  .level-3::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 22px;
+    background: black;
+  }
+
+
+  /* LEVEL-3-parent-grid2 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-3-parent-grid2-wrapper {
+    position: relative;
+    width: 90%;
+    margin: -22px auto;
+  }
+
+  .level-3-parent-grid2-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+  
+  .level-3-parent-grid2 {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 153, 0.7);
+  }
+  
+  
+  /* LEVEL-4 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-4-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0px auto;
+  }
+  
+  .level-4 {
+    margin-bottom: 20px;
+    background: rgba(204, 255, 204, 0.7);
+  }
+
+  .level-4::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 22px;
+    background: black;
+  }
+
+  /* LEVEL-4-grid2 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-4-grid2-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    width: 90%;
+    margin: 42px auto;
+  }
+  
+  .level-4-grid2-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: calc(25% - 5px);
+    width: calc(50% + 10px);
+    height: 2px;
+    background: black;
+  }
+  
+  .level-4-grid2-wrapper > li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+  
+  .level-4-grid2 {
+    margin-bottom: 20px;
+    background: rgba(204, 255, 204, 0.7);
+  }
+
+  .level-4-grid2::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+
+  /* LEVEL-4-parent-grid2 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-4-parent-grid2-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0px auto;
+  }
+
+  .level-4-parent-grid2-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 22px;
+    background: black;
+  }
+  
+  .level-4-parent-grid2 {
+    margin-bottom: 20px;
+    background: rgba(204, 255, 204, 0.7);
+  }
+
+
+  /* LEVEL-5 STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .level-5-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0px auto;
+  }
+  
+  .level-5 {
+    margin-bottom: 20px;
+    background: rgba(255, 204, 255, 0.7);
+  }
+  
+  
+  

@@ -1,0 +1,576 @@
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12">
+    <nb-card-body>
+      <nb-stepper orientation="horizontal">
+        <nb-step [label]="labelOne">
+          <ng-template #labelOne>Production</ng-template>
+          <h3>FENC</h3>
+          <div style="max-width: 1260px" class="container">
+            <div class="row table-row">
+              <div class="col">
+                Code Article M3:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.codeArticle }}
+                </p>
+              </div>
+              <div class="col">
+                Part Number / Réf. Techn:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.partNumber }}</p>
+              </div>
+              <div class="col">
+                Désignation:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.designation }}</p>
+              </div>
+              <div class="col">
+                Date détection:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.dateDetection | date:"dd/MM/yyyy" }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col col-4">
+                Lieu détection:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.lieuDetection }}
+                </p>
+              </div>
+              <div class="col col-2">
+                Qui l'a détecté:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.quiDetecter }}
+                </p>
+              </div>
+              <div class="col col-2">
+                S/N (ou BAP ou lot):
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.sn }}
+                </p>
+              </div>
+              <div class="col col-2">
+                OF:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.of }}</p>
+              </div>
+              <div class="col col-2">
+                Quantité:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.quantite }}</p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Quel est l'écart détecté ?
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.typeEcart }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+                habituelle de faire ?
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.standard }}</p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Préciser la zone impactée sur le produit:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.zone }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Comment l'écart a-t-il été détecté ?
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.typeDetection }}
+                </p>
+              </div>
+            </div>
+            <hr />
+          </div>
+          <button nbButton disabled nbStepperNext>prev</button>
+          <button nbButton nbStepperNext>next</button>
+        </nb-step>
+        <nb-step [label]="labelTwo">
+          <ng-template #labelTwo>Bureau d'étude</ng-template>
+          <h3>FENC</h3>
+  
+          <!--************** Premiére étapes ****************-->
+  
+          <div style="max-width: 1260px" class="container">
+            <div class="row table-row">
+              <div class="col">
+                Code Article M3:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.codeArticle }}
+                </p>
+              </div>
+              <div class="col">
+                Part Number / Réf. Techn:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.partNumber }}</p>
+              </div>
+              <div class="col">
+                Désignation:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.designation }}</p>
+              </div>
+              <div class="col">
+                Date détection:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.dateDetection | date:"dd/MM/yyyy" }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col col-4">
+                Lieu détection:
+                <p style="color: rgb(108 129 156)">
+                  words which don't look even slightly
+                </p>
+              </div>
+              <div class="col col-2">
+                Qui l'a détecté:
+                <p style="color: rgb(108 129 156)">Lorem Ipsum</p>
+              </div>
+              <div class="col col-2">
+                S/N (ou BAP ou lot):
+                <p style="color: rgb(108 129 156)">1.10.33</p>
+              </div>
+              <div class="col col-2">
+                OF:
+                <p style="color: rgb(108 129 156)">1500</p>
+              </div>
+              <div class="col col-2">
+                Quantité:
+                <p style="color: rgb(108 129 156)">1</p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Quel est l'écart détecté ?
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.typeEcart }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+                habituelle de faire ?
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.standard }}</p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Préciser la zone impactée sur le produit:
+                <p style="color: rgb(108 129 156)">
+                  All the Lorem Ipsum generators
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Comment l'écart a-t-il été détecté ?
+                <p style="color: rgb(108 129 156)">theory of ethics</p>
+              </div>
+            </div>
+  
+            <!--***********************************************-->
+  
+            <hr />
+  
+            <!--************** Deuxiéme étapes ****************-->
+  
+            <div class="row table-row">
+              <div class="col-3 col">Non-conformité confirmé ?</div>
+              <div class="col"><nb-checkbox>Non</nb-checkbox></div>
+              <div class="col"><nb-checkbox>Oui</nb-checkbox></div>
+            </div>
+            <div class="row table-row">
+              <div class="col-3 col">sécurisation nécessaire ?</div>
+              <div style="background-color: #cecece" class="col"></div>
+              <div class="col">
+                <nb-checkbox class="mr-3">Oui (compléter volet C)</nb-checkbox
+                ><nb-checkbox>Non</nb-checkbox>
+              </div>
+            </div>
+  
+            <!--***********************************************-->
+  
+            <button nbButton nbStepperPrevious>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </div>
+        </nb-step>
+        <nb-step label="Third step">
+          <h3>FENC</h3>
+  
+          <!--************** Premiére étapes ****************-->
+  
+          <div style="max-width: 1260px" class="container">
+            <div class="row table-row">
+              <div class="col">
+                Code Article M3:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.codeArticle }}
+                </p>
+              </div>
+              <div class="col">
+                Part Number / Réf. Techn:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.partNumber }}</p>
+              </div>
+              <div class="col">
+                Désignation:
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.designation }}</p>
+              </div>
+              <div class="col">
+                Date détection:
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.dateDetection | date:"dd/MM/yyyy" }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col col-4">
+                Lieu détection:
+                <p style="color: rgb(108 129 156)">
+                  words which don't look even slightly
+                </p>
+              </div>
+              <div class="col col-2">
+                Qui l'a détecté:
+                <p style="color: rgb(108 129 156)">Lorem Ipsum</p>
+              </div>
+              <div class="col col-2">
+                S/N (ou BAP ou lot):
+                <p style="color: rgb(108 129 156)">1.10.33</p>
+              </div>
+              <div class="col col-2">
+                OF:
+                <p style="color: rgb(108 129 156)">1500</p>
+              </div>
+              <div class="col col-2">
+                Quantité:
+                <p style="color: rgb(108 129 156)">1</p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Quel est l'écart détecté ?
+                <p style="color: rgb(108 129 156)">
+                  {{ FENC_Data.typeEcart }}
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+                habituelle de faire ?
+                <p style="color: rgb(108 129 156)">{{ FENC_Data.standard }}</p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Préciser la zone impactée sur le produit:
+                <p style="color: rgb(108 129 156)">
+                  All the Lorem Ipsum generators
+                </p>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Comment l'écart a-t-il été détecté ?
+                <p style="color: rgb(108 129 156)">theory of ethics</p>
+              </div>
+            </div>
+  
+            <!--***********************************************-->
+  
+            <hr />
+  
+            <!--************** Deuxiéme étapes ****************-->
+  
+            <div class="row table-row">
+              <div class="col-3 col">Non-conformité confirmé ?</div>
+              <div class="col"><nb-checkbox>Non</nb-checkbox></div>
+              <div class="col"><nb-checkbox>Oui</nb-checkbox></div>
+            </div>
+            <div class="row table-row">
+              <div class="col-3 col">sécurisation nécessaire ?</div>
+              <div style="background-color: #cecece" class="col"></div>
+              <div class="col">
+                <nb-checkbox class="mr-3">Oui (compléter volet C)</nb-checkbox
+                ><nb-checkbox>Non</nb-checkbox>
+              </div>
+            </div>
+  
+            <!--***********************************************-->
+  
+            <hr />
+  
+            <!--************** Troisiéme étapes ****************-->
+  
+            <div class="row table-row">
+              <div class="col-12 col-md-4 text-center">Décision</div>
+              <div class="col-12 col-md-4 text-center">Justification</div>
+              <div class="col-12 col-md-4 text-center">Maîtrise du produit</div>
+            </div>
+  
+            <div class="row table-row table-doc-reference">
+              <div class="col-12 col-md-4 Decision-column px-3">
+                <div class="mt-2 mb-3">
+                  <nb-checkbox>Aucune action sur le produit</nb-checkbox>
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>Retouche selon données approuvées</nb-checkbox>
+                  <div class="d-flex">
+                    <span>réf: </span>
+                    <span class="ml-2" style="color: rgb(108 129 156)">None</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>Retouche selon DRE</nb-checkbox>
+                  <div class="d-flex">
+                    <span>réf: </span>
+                    <span class="ml-2" style="color: rgb(108 129 156)"
+                      >DRE:ETU-23-025</span
+                    >
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>rebut</nb-checkbox>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Production</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-4 Justification-column px-3">
+                <div class="mt-2 mb-5">
+                  Justification de la décision :
+                  <span class="ml-2" style="color: rgb(108 129 156)"
+                    >DRE sans impact</span
+                  >
+                </div>
+  
+                <div class="mb-5">Limitations / applicabilité :</div>
+  
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Technique / Méthodes</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-4 Matirise-column px-3">
+                <div class="mt-2 mb-3">
+                  <nb-checkbox
+                    >FENC à transmeetre
+                    <small
+                      >(atelier
+                      <span class="ml-2" style="color: rgb(108 129 156)"
+                        >____</span
+                      >)</small
+                    ></nb-checkbox
+                  >
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>Inspection Record</nb-checkbox>
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>Plan de surveillance Renforcé</nb-checkbox>
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>Résolution de Probléme (RDP)</nb-checkbox>
+                </div>
+                <div class="mb-3">
+                  <nb-checkbox>Aucun suivi nécessaire</nb-checkbox>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Qualité Produit</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row table-row table-doc-reference">
+              <div  class="col-12 validation-column px-3">
+                <div class="row">
+                  <div style="border-right: none;" class="col-md-4 col-12">
+                    <div class="mt-2 mb-3">
+                      <nb-checkbox
+                        >Validation complémentaire nécesaire</nb-checkbox
+                      >
+                    </div>
+                    <div class="signature-table">
+                      <div class="row table-row">
+                        <div class="col text-center">Navigabilité</div>
+                      </div>
+                      <div class="row table-row">
+                        <div class="col">
+                          <div class="d-flex"><p>Nom :</p></div>
+                          <div class="d-flex"><p>Date :</p></div>
+                          <div class="d-flex mb-4"><p>Signature :</p></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-12">
+                    <div class="mt-4 mb-3 d-flex">
+                      Dérogation sur produit livrable : <div class="ml-4"><nb-checkbox>Oui</nb-checkbox><nb-checkbox class="ml-2">Non</nb-checkbox></div>
+                      
+                    </div>
+                    <div class="mt-4 mb-5 d-flex">
+                      Justification : 
+                      
+                    </div>
+                    <div class="mt-4 mb-5 d-flex">
+                      Occurence Report (OR) : <div class="ml-4"><nb-checkbox>Oui</nb-checkbox><nb-checkbox class="ml-2">Non</nb-checkbox></div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row table-row table-doc-reference">
+              <div class="col-12 col-md-4 Decision-column px-3">
+                <div class="mt-2 mb-3">
+                  <nb-checkbox>Validation complémentaire nécesaire</nb-checkbox>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Production</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-4 Justification-column px-3">
+                <div class="mt-2 mb-3">
+                  <nb-checkbox>Validation complémentaire nécesaire</nb-checkbox>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Technique / Méthodes</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-4 Matirise-column px-3">
+                <div class="mt-2 mb-3">
+                  <nb-checkbox>Validation complémentaire nécesaire</nb-checkbox>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Qualité</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row table-row table-doc-reference">
+              <div class="col-12 col-md-4 Decision-column px-3">
+                
+              </div>
+  
+              <div class="col-12 col-md-4 Justification-column px-3">
+                <div class="mt-2 mb-3">
+                  <strong>Presentation de la Retouche :</strong>
+                  <nb-checkbox>Matériel à re-présenter pour validation</nb-checkbox>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Technique / Méthodes</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-4 Matirise-column px-3">
+                <div class="mt-2 mb-3">
+                  <strong>Solde de la FENC</strong>
+                </div>
+                <div class="signature-table">
+                  <div class="row table-row">
+                    <div class="col text-center">Qualité</div>
+                  </div>
+                  <div class="row table-row">
+                    <div class="col">
+                      <div class="d-flex"><p>Nom :</p></div>
+                      <div class="d-flex"><p>Date :</p></div>
+                      <div class="d-flex mb-4"><p>Signature :</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!--***********************************************-->
+            <div class="mt-3">
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton nbStepperNext>next</button>
+              <button (click)="Imprime()" nbButton >Imprimer FENC</button>
+            </div>
+            
+          </div>
+        </nb-step>
+        <nb-step [label]="labelFour">
+          <ng-template #labelFour>Fourth step</ng-template>
+          <h3>Step content #4</h3>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton disabled nbStepperNext>next</button>
+        </nb-step>
+      </nb-stepper>
+    </nb-card-body>
+  </nb-card>
+  

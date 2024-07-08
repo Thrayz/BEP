@@ -1,0 +1,18 @@
+<nb-card>
+    <nb-card-header>
+      List des FENCs
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" (userRowSelect)="handleGridSelected($event)" [source]="source" (editConfirm)="onEditConfirm($event)" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  
+  <ng-template #contentTemplate let-data>
+    <p>Vous étes sur que vous voulez supprimer cette anomalie ? 
+      <br>
+      {{ data.text }}
+    </p>
+    <button (click)="confirmDelete()" class="btn btn-success float-right">Confirmer</button>
+  </ng-template>

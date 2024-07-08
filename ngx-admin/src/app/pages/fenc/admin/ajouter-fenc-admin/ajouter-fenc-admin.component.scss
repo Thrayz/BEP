@@ -1,0 +1,131 @@
+
+
+.form-label{
+    justify-content: normal !important;
+}
+
+.row-conf{
+    width: 100% !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.input-conf{
+    width: 100% !important;
+    max-width: none !important;
+    border: 1px solid #7f94a6 !important;
+    border-radius: 0.25rem;
+    margin: 3px 0px 15px 0px;
+}
+
+
+:host ::ng-deep nb-stepper .step-content {
+    text-align: center;
+  
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+
+  .table-row {
+    border: 1px solid #67737f
+  }
+  .table-row > .col, .col-md-4 {
+    padding: 10px 17px;
+  }
+
+  .Decision-column{
+    background-color: rgba(198,217,241,0.7);
+  }
+
+  .Justification-column{
+    background-color: rgba(255,255,153,0.7);
+  }
+
+  .Matirise-column{
+    background-color: rgba(255,204,255,0.7);
+  }
+
+  .validation-column{
+    background-color: rgba(204,255,204,0.7);
+  }
+
+  .table-doc-reference{
+    text-align: initial;
+  }
+
+  .signature-table{
+    position: relative;
+    margin: 16px 25px 10px 25px;
+  }
+
+  .signature-table .col{
+    background-color: white;
+  }
+
+  .signature-name-field-container div[contentEditable=true] {
+    outline: none;
+  }
+  .signature-name-field:focus{
+    border: none;
+  }
+
+  .mat-datepicker-popup{
+    bottom: 217.7px;
+    background-color: #ddebf1;
+    border: 2px solid #24a5d6;
+    border-radius: 10px;
+    left: 853.438px;
+    padding: 16px 4px;
+  }
+
+  .mat-datepicker {
+    background-color: #f1f1f1;
+  }
+
+  .icon-calender-signature{
+    color: rgb(194, 194, 194);
+    cursor:pointer
+    
+  }
+
+  .datepicker-input-conf{
+    border: none;
+  }
+
+  .confirmation button{
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+
+  }
+
+
+  .button-Decision {
+    border-radius: 5px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .button-Decision:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .blue {
+    background-color: #3599e6;
+    box-shadow: 0px 5px 0px 0px #137fd2;
+  }
+  
+  .blue:hover {
+    background-color: #48b6ff;
+  }

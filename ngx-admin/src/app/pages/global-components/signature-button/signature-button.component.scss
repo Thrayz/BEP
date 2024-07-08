@@ -1,0 +1,36 @@
+.confirmation button{
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+
+  }
+
+
+  .button-Decision {
+    border-radius: 5px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .button-Decision:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .blue {
+    background-color: #3599e6;
+    box-shadow: 0px 5px 0px 0px #137fd2;
+  }
+  
+  .blue:hover {
+    background-color: #48b6ff;
+  }

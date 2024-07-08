@@ -1,0 +1,255 @@
+<div class="row">
+    <div class="col-md-12">
+      <nb-card class="inline-form-card">
+        <nb-card-header>
+            <div class="header-title">DEMANDE DE RETOUCHE EXCEPTIONNELLE</div>
+            <div class="">
+                <div style="margin: 16px 60px;" class="row">
+                    <div class="col-3 yellow-space header-col ">
+                        <p>Matériel(s) (désignation) :</p>
+                    </div>
+                    <div class="col-3 header-col ">
+                        <p>{{data.designation}}</p>
+                    </div>
+                    <div class="col-3 yellow-space header-col ">
+                        <p>code article :</p> 
+                    </div>
+                    <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col ">
+                        <p>{{data.codeArticle}}</p>
+                    </div>
+                    <div class="col-3 yellow-space header-col ">
+                        <p>P/N :</p>
+                    </div>
+                    <div class="col-3 header-col ">
+                        <p>{{data.Pn}}</p>
+                    </div>
+                    <div class="col-3 yellow-space header-col ">
+                        <p>S/N :</p> 
+                    </div>
+                    <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col ">
+                        <p>{{data.Sn}}</p>
+                    </div>
+                </div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="form-title">
+                Demande de retouche exceptionnelle (METHODE)
+            </div>
+            <form class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-5 yellow-space header-col ">
+                            <p>Non-conformité associé :<br><small>(joindre copie de la Fiche NC)</small></p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-7 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-5 yellow-space header-col ">
+                            <p>Résumé de la solution de retouche :<br><small>(Résumé de la solution proposée détaillée en p. 2)</small></p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-7 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>CDS article :</p> 
+                        </div>
+                        <div class="col-2 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>Montant des dérives :</p> 
+                        </div>
+                        <div class="col-2 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>Coût estimé (MO+MP) :</p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-2 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Demandeur : <br> (Nom, Fonction)</p> 
+                        </div>
+                        <div class="col-3 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding">
+                                    <input class="input-conf" nbInput fullWidth placeholder="Choisir la date"
+                            [nbDatepicker]="formpicker">
+                        <nb-datepicker #formpicker></nb-datepicker>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding">
+                                    <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <button type="submit" nbButton status="primary">Submit</button>
+            </form>
+        </nb-card-body>
+        <nb-card-body>
+            <div class="form-title">
+                VERIFICATION TECHNIQUE / Impact sur la définition (DT habilite)
+            </div>
+            <form class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-9 yellow-space header-col ">
+                            <p>Process Identique au As Designed ? <small>(dont assemblage/désassemblage)</small></p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="nonConformite"
+                                class="form-inline px-4"
+                                >
+                                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                                <nb-radio value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-9 yellow-space header-col ">
+                            <p>Matériaux Identique au As Designed ? Pas de nouvelle piéce ajoutée ?</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="nonConformite"
+                                class="form-inline px-4"
+                                >
+                                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                                <nb-radio value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-9 yellow-space header-col ">
+                            <p>Interchangeabilité maintenue ? Maintenance Identique</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="nonConformite"
+                                class="form-inline px-4"
+                                >
+                                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                                <nb-radio value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-9 yellow-space header-col ">
+                            <p>CONCLUSION : Remise en conformité à la définition ?</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="nonConformite"
+                                class="form-inline px-4"
+                                >
+                                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                                <nb-radio value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-9 yellow-space header-col ">
+                            <p>Nécesseité d'une vérification par la DT du produit retouché ?</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="nonConformite"
+                                class="form-inline px-4"
+                                >
+                                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                                <nb-radio value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        
+                        <div class="col-3 yellow-space header-col ">
+                            <p>Commentaires :</p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-9 header-col nopadding">
+                            <input class="input-conf size-large"  type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Vérificateur DT : <br> (Nom, Fonction)</p> 
+                        </div>
+                        <div class="col-3 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding">
+                                    <input class="input-conf" nbInput fullWidth placeholder="Choisir la date"
+                            [nbDatepicker]="formpicker">
+                        <nb-datepicker #formpicker></nb-datepicker>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding">
+                                    <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <button type="submit" nbButton status="primary">Submit</button>
+            </form>
+        </nb-card-body>
+        <nb-card-body>
+            <div class="form-title">
+                PRISE EN COMPTE PAR ATELIER (QUALITE PRODUIT)
+            </div>
+            <form class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-9 yellow-space header-col ">
+                            <p>Prise en compte sur la FENC associée :</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="nonConformite"
+                                class="form-inline px-4"
+                                >
+                                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                                <nb-radio value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-3 yellow-space header-col ">
+                            <p>Commentaires :</p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-9 header-col nopadding">
+                            <input class="input-conf size-large"  type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Qualité Produit : <br> (Nom, Fonction)</p> 
+                        </div>
+                        <div class="col-3 header-col nopadding">
+                            <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding">
+                                    <input class="input-conf" nbInput fullWidth placeholder="Choisir la date"
+                            [nbDatepicker]="formpicker">
+                        <nb-datepicker #formpicker></nb-datepicker>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding">
+                                    <input class="input-conf" type="text" nbInput fullWidth placeholder="Ecrire ici ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <button type="submit" nbButton status="primary">Submit</button>
+            </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+

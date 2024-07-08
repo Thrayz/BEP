@@ -1,0 +1,188 @@
+<div class="row">
+    <div class="col-md-12">
+      <nb-card class="inline-form-card">
+        <nb-card-header>Anomalie rencontrée</nb-card-header>
+        <nb-card-body>
+          <form [formGroup]="formFENC" class="form-inline align-items-center text-center my-4">
+            <div style="max-width: 1260px" class="container">
+              <div class="row table-row">
+                <div class="col">
+                  Code Article M3:
+                  <input
+                    formControlName="codeArticle"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col">
+                  Part Number
+                  <input
+                    formControlName="partNumber"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col">
+                  Désignation:
+                  <input
+                    formControlName="designation"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col">
+                  Date détection:
+                  <input formControlName="dateDetection" class="input-conf" nbInput [nbDatepicker]="formpicker" />
+                  <nb-datepicker #formpicker></nb-datepicker>
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col col-3">
+                  Lieu détection:
+                  <nb-select
+                    formControlName="lieuDetection"
+                    class="input-conf align-items-center text-center"
+                    selected="1"
+                  >
+                    <nb-option disabled value="1">Choisir Lieu</nb-option>
+                    <nb-option value="Vérification BR">Vérification BR</nb-option>
+                    <nb-option value="Atelier Réservoir">Atelier Réservoir</nb-option>
+                    <nb-option value="Atelier Sandwich">Atelier Sandwich</nb-option>
+                  </nb-select>
+                </div>
+                <div class="col col-3">
+                  Qui l'a détecté:
+                  <nb-select formControlName="quiDetecter" class="input-conf" selected="1">
+                    <nb-option disabled value="1">Choisir Employer</nb-option>
+                    <nb-option value="Anwar Nejmaoui">Anwar Nejmaoui</nb-option>
+                    <nb-option value="Nourdine Arfaoui">Nourdine Arfaoui</nb-option>
+                    <nb-option value="Mounir Minyaoui">Mounir Minyaoui</nb-option>
+                  </nb-select>
+                </div>
+                <div class="col col-2">
+                  S/N:
+                  <input
+                    formControlName="sn"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col col-2">
+                  OF:
+                  <input
+                    formControlName="of"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col col-2">
+                  Quantité:
+                  <input
+                    formControlName="quantite"
+                    class="input-conf"
+                    type="number"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Quel est l'écart détecté ?
+                  <input
+                    class="input-conf"
+                    formControlName="typeEcart"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+                  habituelle de faire ?
+                  <input
+                    class="input-conf"
+                    formControlName="standard"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Préciser la zone impactée sur le produit:
+                  <input
+                    class="input-conf"
+                    formControlName="zone"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Comment l'écart a-t-il été détecté ?
+                  <input
+                    class="input-conf"
+                    formControlName="typeDetection"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <nb-card class="inline-form-card">
+        <nb-card-header>Commentaire</nb-card-header>
+        <nb-card-body>
+          <form class="form-inline text-center my-4">
+            <div style="max-width: 1052px;margin-left: 0px;" class="container">
+              <textarea
+              formControlName="commentaire"
+              rows="5"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Ecrire un commentaire ici ..."
+              ></textarea>              
+            </div>
+          </form>
+        </nb-card-body>
+        <div class="mt-3 confirmation">
+          <button (click)="saveAnomalie()" type="submit" class="btn button-Decision blue effect">Ajouter FENC</button>
+        </div>
+      </nb-card>
+    </div>
+  </div>

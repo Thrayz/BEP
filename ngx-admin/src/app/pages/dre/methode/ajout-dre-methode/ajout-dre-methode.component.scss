@@ -1,0 +1,363 @@
+.form-label{
+    justify-content: normal !important;
+}
+
+.row-conf{
+    width: 100% !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.input-conf{
+    width: 100% !important;
+    max-width: none !important;
+    border: none;
+    border-radius: 0px !important;
+    height: 100%;
+    border: 1px solid #7f94a6 !important;
+}
+
+.header-title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 15px 0px 41px 0px;
+}
+
+.header-col{
+    border: 1px solid #d2d2d2;
+    border-right:none;
+    padding: 5px 0px 5px 0px;
+}
+
+.yellow-space{
+    background-color: rgba(255,255,121 , 0.78);
+}
+
+.header-col p{
+    color: #222b45;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin: 0px 0px 0px 18px;
+}
+
+.nopadding{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.form-title{
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #222b45;
+    margin: 15px 60px 15px 60px;
+    padding: 0px 10px;
+}
+
+.dre-information{
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #d2d2d2 !important;
+}
+
+.dre-information-noBorder{
+    display: flex;
+    align-items: center;
+}
+
+
+.files-container{
+    height: 285px;
+    overflow-y: auto;
+}
+
+
+
+///////// checkboxes //////////////
+.disabled-checkbox {
+    /* Adjust the opacity value to change the level of transparency */
+    pointer-events: none; /* Disable pointer events to prevent interaction */
+  }
+  
+  .disabled-checkbox label {
+    cursor: not-allowed; /* Set the cursor to "not-allowed" when hovering over the label */
+  }
+
+
+
+
+
+
+
+
+
+
+
+  //////////////// hackathon //////////////////
+  
+  .team-container-gpt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .team-member-gpt {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 260px;
+    height: 360px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .team-member-gpt:hover {
+    transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+  }
+
+  .image-member {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+  }
+
+  .image-member-mark {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 4px solid #00B6E1;
+  }
+
+  .team-member-gpt p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #999;
+  }
+  
+  .team-member-gpt p:first-of-type {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .team-member-gpt p:last-of-type {
+    margin-bottom: 10px;
+  }
+
+  .team-member-details-gpt{
+    height: 210px;
+    overflow: scroll;
+  }
+
+
+  /****************** leader ***************/
+  .importedFiles-container-gpt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .display-files-gpt {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 183px;
+    height: 177px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+
+  .display-files-gpt-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    word-break: break-word;
+    margin: auto;
+  }
+  
+  .display-files-gpt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .display-files-gpt-mark img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 4px solid #0095ff;
+  }
+
+  .display-files-gpt img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .display-files-gpt .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  
+  
+  .display-files-gpt p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #999;
+  }
+  
+  .display-files-gpt p:first-of-type {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .display-files-gpt p:last-of-type {
+    margin-bottom: 10px;
+  }
+  
+  .display-files-gpt-button {
+    background-color: #d51e1ed6;
+    border: 2px solid #d51e1ed6;
+    color: white;
+    border-color: white;
+    padding: 10px 14px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "michroma";
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 21px 0px 5px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+  
+  .display-files-gpt-button:hover {
+    background-color: #fff;
+    color: #d51e1ed6;
+    border: 2px solid #d51e1ed6;
+    cursor: pointer;
+  }
+
+
+  .files-add.add-files-card {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .files-add.add-files-card i {
+    font-size: 48px;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+  
+  .files-add.add-files-card p {
+    font-size: 1.1rem;
+    color: #bbb;
+    margin: 0;
+  }
+  
+  .files-add.add-files-card:hover {
+    background-color: #eee;
+  }
+  
+  .files-add.add-files-card:hover i {
+    color: #555;
+  }
+
+  
+  .files-add {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 183px;
+    height: 177px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .files-add i {
+    font-size: 37px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  .files-add p {
+    font-size: 13px;
+    margin: 5px 0;
+    color: #999;
+    text-align: center;
+  }
+  
+  .files-add p:first-of-type {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .team-leader-member-details-gpt{
+    height: 210px;
+    overflow: scroll;
+  }
+
+  .my-workshop-container p strong {
+    color:#898989
+  }
+
+  .my-workshop-container p span {
+    word-break: break-all;
+  }
+
+  .signature-field-container img{
+    width: 160px;
+    height: 77px;
+  }
+
+

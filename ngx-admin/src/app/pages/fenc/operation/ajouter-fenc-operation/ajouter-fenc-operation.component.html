@@ -1,0 +1,290 @@
+
+
+<div  *ngIf="!stepTwo" class="row">
+  <div style="margin: 0px auto;" class="col-md-8">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Choisir UAP</nb-card-header>
+      <nb-card-body>
+        <p>
+          Choisir l'UAP concerner :
+        </p>
+        <form class="mb-5" [formGroup]="formUAP">
+          <nb-select formControlName="uap" class=" col-sm-11" selected="1">
+            <nb-option disabled value="1">Choisir l'UAP</nb-option>
+            <nb-option value="Reservoir">Réservoir</nb-option>
+            <nb-option value="Degivreur">Dégivreur</nb-option>
+          </nb-select>
+        </form>
+        <div *ngIf="fs['uap'].invalid && (fs['uap'].dirty || fs['uap'].touched)">
+          <div class="text-danger" *ngIf="fs['uap'].errors && fs['uap'].errors['required']" >*L'UAP ne peut pas être null</div>
+        </div>
+      </nb-card-body>
+      <div class="mt-3 confirmation">
+        <button (click)="saveUAP()" type="submit" class="btn button-Decision blue effect">Confirmer UAP</button>
+      </div>
+      
+    </nb-card>
+  </div>
+</div>
+
+<div *ngIf="stepTwo" class="row">
+    <div class="col-md-12">
+      <nb-card class="inline-form-card">
+        <nb-card-header>Anomalie rencontrée</nb-card-header>
+        <nb-card-body>
+          <form [formGroup]="formFENC" class="form-inline align-items-center text-center my-4">
+            <div style="max-width: 1260px" class="container">
+              <div class="row table-row">
+                <div class="col">
+                  Code Article M3:
+                  <input
+                    formControlName="codeArticle"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                    [matAutocomplete]="auto"
+                  />
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let article of filteredArticle | async" [value]="article.codeArticle">
+                      {{article.codeArticle}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </div>
+                <div class="col">
+                  Part Number
+                  <input
+                    formControlName="partNumber"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col">
+                  Désignation:
+                  <input
+                    formControlName="designation"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col">
+                  Date détection:
+                  <input formControlName="dateDetection" class="input-conf" nbInput [nbDatepicker]="formpicker" />
+                  <nb-datepicker #formpicker></nb-datepicker>
+                </div>
+              </div>
+              <div class="row table-row">
+                <div  class="col col-3">
+                  Lieu détection:
+                  <nb-select *ngIf="formUAP.get('uap').value == 'Degivreur' " 
+                    formControlName="lieuDetection"
+                    class="input-conf align-items-center text-center"
+                    selected="1"
+                  >
+                    <nb-option disabled value="1">Choisir Lieu</nb-option>
+                    <nb-option  value="Vérification BR">Atelier confection</nb-option>
+                    <nb-option value="Atelier Réservoir">Atelier Demolage</nb-option>
+                    <nb-option value="Atelier Sandwich">Atelier préportion</nb-option>
+                    <nb-option value="Atelier Sandwich">Atelier Centrale Réservoir</nb-option>
+                  </nb-select>
+
+                  <nb-select *ngIf="formUAP.get('uap').value == 'Reservoir' " 
+                    formControlName="lieuDetection"
+                    class="input-conf align-items-center text-center"
+                    selected="1"
+                  >
+                    <nb-option disabled value="1">Choisir Lieu</nb-option>
+                    <nb-option  value="Vérification BR">Atelier confection</nb-option>
+                    <nb-option value="Atelier Réservoir">Atelier Couture</nb-option>
+                    <nb-option value="Atelier Sandwich">Atelier Centrale Dégivreur</nb-option>
+                  </nb-select>
+
+                </div>
+                <div class="col col-3">
+                  Qui l'a détecté:
+                  <input
+                    formControlName="quiDetecter"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                    disabled
+                  />
+                </div>
+                <div class="col col-2">
+                  S/N:
+                  <input
+                    formControlName="sn"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col col-2">
+                  OF:
+                  <input
+                    formControlName="of"
+                    class="input-conf"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+                <div class="col col-2">
+                  Quantité:
+                  <input
+                    formControlName="quantite"
+                    class="input-conf"
+                    type="number"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Quel est l'écart détecté ?
+                  <input
+                    class="input-conf"
+                    formControlName="typeEcart"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+                  habituelle de faire ?
+                  <input
+                    class="input-conf"
+                    formControlName="standard"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Préciser la zone impactée sur le produit:
+                  <input
+                    class="input-conf"
+                    formControlName="zone"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  Comment l'écart a-t-il été détecté ?
+                  <input
+                    class="input-conf"
+                    formControlName="typeDetection"
+                    type="text"
+                    nbInput
+                    fullWidth
+                    placeholder=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div *ngIf="fs['codeArticle'].invalid && (fs['codeArticle'].dirty || fs['codeArticle'].touched)">
+            <div class="text-danger" *ngIf="fs['codeArticle'].errors && fs['codeArticle'].errors['required']" >*Le code article ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['partNumber'].invalid && (fs['partNumber'].dirty || fs['partNumber'].touched)">
+            <div class="text-danger" *ngIf="fs['partNumber'].errors && fs['partNumber'].errors['required']" >*Le part number ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['designation'].invalid && (fs['designation'].dirty || fs['designation'].touched)">
+            <div class="text-danger" *ngIf="fs['designation'].errors && fs['designation'].errors['required']" >*La designation ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['dateDetection'].invalid && (fs['dateDetection'].dirty || fs['dateDetection'].touched)">
+            <div class="text-danger" *ngIf="fs['dateDetection'].errors && fs['dateDetection'].errors['required']" >*La date detection ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['lieuDetection'].invalid && (fs['lieuDetection'].dirty || fs['lieuDetection'].touched)">
+            <div class="text-danger" *ngIf="fs['lieuDetection'].errors && fs['lieuDetection'].errors['required']" >*Le lieu detection ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['quiDetecter'].invalid && (fs['quiDetecter'].dirty || fs['quiDetecter'].touched)">
+            <div class="text-danger" *ngIf="fs['quiDetecter'].errors && fs['quiDetecter'].errors['required']" >*La case de qui la detecter ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['sn'].invalid && (fs['sn'].dirty || fs['sn'].touched)">
+            <div class="text-danger" *ngIf="fs['sn'].errors && fs['sn'].errors['required']" >*Le sn ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['of'].invalid && (fs['of'].dirty || fs['of'].touched)">
+            <div class="text-danger" *ngIf="fs['of'].errors && fs['of'].errors['required']" >*L'OF ne peut pas être null</div>
+            <div class="text-danger" *ngIf="fs['of'].errors && fs['of'].errors['pattern']" >*L'OF contient que des chiffres</div>
+          </div>
+          <div *ngIf="fs['quantite'].invalid && (fs['quantite'].dirty || fs['quantite'].touched)">
+            <div class="text-danger" *ngIf="fs['quantite'].errors && fs['quantite'].errors['required']" >*La quantite ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['typeEcart'].invalid && (fs['typeEcart'].dirty || fs['typeEcart'].touched)">
+            <div class="text-danger" *ngIf="fs['typeEcart'].errors && fs['typeEcart'].errors['required']" >*Le type d'ecart ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['standard'].invalid && (fs['standard'].dirty || fs['standard'].touched)">
+            <div class="text-danger" *ngIf="fs['standard'].errors && fs['standard'].errors['required']" >*Le standard ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['zone'].invalid && (fs['zone'].dirty || fs['zone'].touched)">
+            <div class="text-danger" *ngIf="fs['zone'].errors && fs['zone'].errors['required']" >*La zone ne peut pas être null</div>
+          </div>
+          <div *ngIf="fs['typeDetection'].invalid && (fs['typeDetection'].dirty || fs['typeDetection'].touched)">
+            <div class="text-danger" *ngIf="fs['typeDetection'].errors && fs['typeDetection'].errors['required']" >*Le type de detection ne peut pas être null</div>
+          </div>
+        </nb-card-body>
+        <div class="mt-3 d-flex align-items-center confirmation">
+          <button style="border-bottom-right-radius: 0px;" (click)="handleFileWindow(contentTemplate)" type="submit" class="btn button-Decision grey effect">Ajouter Piéces Jointes</button>
+          <button style="border-bottom-left-radius: 0px;" (click)="saveAnomalie()" type="submit" class="btn button-Decision blue effect">Confirmer FENC</button>
+        </div>
+      </nb-card>
+    </div>
+  </div>
+
+  <ng-template style="width: 70%;" #contentTemplate let-data>
+    <p style="width: 640px;">
+        {{ data.text }}
+    </p>
+    <div class="files-container">
+        <div class="importedFiles-container-gpt">
+            <div (click)="triggerFileInput()" class="files-add add-files-card">
+                <!-- Add the event handler to the icon -->
+                <i class="fa fa-plus" ></i>
+                <p>Ajouter un fichier</p>
+                <input type="file" id="fileInput" accept=".pdf, .docx, .jpg, .png" style="display: none"
+                    (change)="onFileSelected($event)" multiple />
+
+            </div>
+            <div *ngFor="let fileUrl of fileUrls; let i = index" class="display-files-gpt">
+                <div class="display-files-gpt-container">
+                    <i style="font-size: 50px;" class="fa fa-file"></i>
+                    <div class="file-link-container">
+                    <i class="far fa-hand-point-right mr-2"></i><a [href]="fileUrl" target="_blank" [download]="selectedFiles[i].name">{{ selectedFiles[i].name }}</a>
+                    </div>
+                </div>
+                <i (click)="removeFile(i)" style="cursor:pointer;font-size: 15px;color: grey;" class="fa fa-times"></i>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>
+    </div>
+</ng-template>
+  
+
+
+

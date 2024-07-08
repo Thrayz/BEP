@@ -1,0 +1,27 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()"><strong>BE </strong><span> plateforme</span></a>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions size="small">
+
+    <nb-action class="control-item">
+      <nb-search type="rotate-layout"></nb-search>
+    </nb-action>
+    <nb-action class="control-item" icon="email-outline"></nb-action>
+    <nb-action class="control-item" icon="bell-outline"></nb-action>
+    <nb-action class="user-action"  >
+      <div style="color: aliceblue;font-family: Open Sans, sans-serif;font-size: 14px;">
+        {{userInfo}}
+      </div>
+      <div (click)="logout()" class="ml-3" style="color:#ff3d71;font-family: Open Sans, sans-serif;font-size: 14px;cursor:pointer">
+        LOGOUT
+      </div>
+    </nb-action>
+  </nb-actions>
+</div>

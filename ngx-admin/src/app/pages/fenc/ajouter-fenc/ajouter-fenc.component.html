@@ -1,0 +1,561 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Anomalie rencontrée</nb-card-header>
+      <nb-card-body>
+        <form class="form-inline align-items-center text-center my-4">
+          <div style="max-width: 1260px" class="container">
+            <div class="row table-row">
+              <div class="col">
+                Code Article M3:
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+              <div class="col">
+                Part Number
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+              <div class="col">
+                Désignation:
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+              <div class="col">
+                Date détection:
+                <input class="input-conf" nbInput [nbDatepicker]="formpicker" />
+                <nb-datepicker #formpicker></nb-datepicker>
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col col-3">
+                Lieu détection:
+                <nb-select
+                  class="input-conf align-items-center text-center"
+                  selected="1"
+                >
+                  <nb-option disabled value="1">Choisir Lieu</nb-option>
+                  <nb-option value="2">Vérification BR</nb-option>
+                  <nb-option value="3">Atelier Réservoir</nb-option>
+                  <nb-option value="4">Atelier Sandwich</nb-option>
+                </nb-select>
+              </div>
+              <div class="col col-3">
+                Qui l'a détecté:
+                <nb-select class="input-conf" selected="1">
+                  <nb-option disabled value="1">Choisir Employer</nb-option>
+                  <nb-option value="2">Anwar Nejmaoui</nb-option>
+                  <nb-option value="3">Nourdine Arfaoui</nb-option>
+                  <nb-option value="4">Mounir Minyaoui</nb-option>
+                </nb-select>
+              </div>
+              <div class="col col-2">
+                S/N:
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+              <div class="col col-2">
+                OF:
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+              <div class="col col-2">
+                Quantité:
+                <input
+                  class="input-conf"
+                  type="number"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Quel est l'écart détecté ?
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+                habituelle de faire ?
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Préciser la zone impactée sur le produit:
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="row table-row">
+              <div class="col">
+                Comment l'écart a-t-il été détecté ?
+                <input
+                  class="input-conf"
+                  type="text"
+                  nbInput
+                  fullWidth
+                  placeholder=""
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+        <button type="submit" nbButton status="primary">Submit</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+
+<div _ngcontent-gwy-c391="" class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-12">
+        <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+      ><nb-card-header _ngcontent-gwy-c391="">Status</nb-card-header
+      ><nb-card-body _ngcontent-gwy-c391=""
+        ><form
+          [formGroup]="formFENC"
+          _ngcontent-gwy-c391=""
+          novalidate=""
+          class="ng-untouched ng-pristine ng-valid my-4"
+        >
+          <div _ngcontent-gwy-c391="" class="form-group row">
+            <label
+              _ngcontent-gwy-c391=""
+              for="inputEmail1"
+              class="label col-sm-7 col-form-label"
+              >Non-conformité confirmée ?</label
+            >
+            <div _ngcontent-gwy-c391="" class="col-sm-5">
+              <nb-radio-group
+                formControlName="nonConforme"
+                [(ngModel)]="nonConforme"
+                valu
+                class="form-inline"
+              >
+                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                <nb-radio value="true">Oui</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+          <div
+            *ngIf="nonConforme == 'true'"
+            _ngcontent-gwy-c391=""
+            class="form-group row"
+          >
+            <label
+              _ngcontent-gwy-c391=""
+              for="inputEmail1"
+              class="label col-sm-7 col-form-label"
+              >Sécurisation nécessaire ?</label
+            >
+            <div _ngcontent-gwy-c391="" class="col-sm-5">
+              <nb-radio-group class="form-inline">
+                <nb-radio value="false" class="mr-2">Non</nb-radio>
+                <nb-radio value="true">Oui</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+        </form></nb-card-body
+      ></nb-card
+    >
+      </div>
+      <div class="col-12">
+        <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+      ><nb-card-header _ngcontent-gwy-c391="">Ajout de Commentaire</nb-card-header
+      ><nb-card-body _ngcontent-gwy-c391=""
+        ><form
+          [formGroup]="formFENC"
+          _ngcontent-gwy-c391=""
+          novalidate=""
+          class="ng-untouched ng-pristine ng-valid my-4"
+        >
+          <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
+        </form></nb-card-body
+      ></nb-card
+    >
+      </div>
+    </div>
+    
+  </div>
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <div class="row">
+      <div class="col-12">
+        <nb-card>
+          <nb-card-header> Décision sur le produit </nb-card-header>
+          <nb-card-body>
+            <h4>Donner votre décision</h4>
+            <ol class="mb-3">
+                <li>Consulter les documents précédents</li>
+                <li>Cocher votre avis sur le status de la non-conformité</li>
+                <li>Cocher votre décisions dans la table</li>
+                <li>Ecrire votre nom</li>
+                <li>Choisissez la date</li>
+                <li>Met votre signature</li>
+            </ol>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<div _ngcontent-gwy-c391="" class="row">
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+      ><nb-card-header _ngcontent-gwy-c391=""
+        >Maîtrise du produit</nb-card-header
+      ><nb-card-body _ngcontent-gwy-c391=""
+        ><form
+          _ngcontent-gwy-c391=""
+          novalidate=""
+          class="ng-untouched ng-pristine ng-valid"
+        >
+          <div class="row table-row table-doc-reference">
+            <div class="col-12 Matirise-column px-3 py-2">
+              <div class="mt-2 mb-3">
+                <nb-checkbox
+                  >FENC à transmeetre
+                  <small
+                    >(atelier
+                    <span class="ml-2" style="color: rgb(108 129 156)"
+                      >____</span
+                    >)</small
+                  ></nb-checkbox
+                >
+              </div>
+              <div class="mb-3">
+                <nb-checkbox>Inspection Record</nb-checkbox>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox>Plan de surveillance Renforcé</nb-checkbox>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox>Résolution de Probléme (RDP)</nb-checkbox>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox>Aucun suivi nécessaire</nb-checkbox>
+              </div>
+              <signature-cas-ajout [titre]="'Décision'" [nomElementId]="'content-nom-production'" [dateElementId]="'content-date-production'" (notification)="getDataSignatureProduction($event)"></signature-cas-ajout>
+              
+            </div>
+          </div>
+        </form></nb-card-body
+      ></nb-card
+    >
+  </div>
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <div class="row">
+      <div class="col-12">
+        <nb-card>
+          <nb-card-header> Décision sur le produit </nb-card-header>
+          <nb-card-body>
+            <h4>Donner votre décision</h4>
+            <ol class="mb-3">
+                <li>Consulter les documents précédents</li>
+                <li>Cocher votre avis sur le status de la non-conformité</li>
+                <li>Cocher votre décisions dans la table</li>
+                <li>Ecrire votre nom</li>
+                <li>Choisissez la date</li>
+                <li>Met votre signature</li>
+            </ol>
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-12">
+        <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+          ><nb-card-header _ngcontent-gwy-c391="">Status</nb-card-header
+          ><nb-card-body _ngcontent-gwy-c391=""
+            ><form
+              [formGroup]="formFENC"
+              _ngcontent-gwy-c391=""
+              novalidate=""
+              class="ng-untouched ng-pristine ng-valid my-4"
+            >
+              <div _ngcontent-gwy-c391="" class="form-group row">
+                <label
+                  _ngcontent-gwy-c391=""
+                  for="inputEmail1"
+                  class="label col-sm-7 col-form-label"
+                  >Non-conformité confirmée ?</label
+                >
+                <div _ngcontent-gwy-c391="" class="col-sm-5">
+                  <nb-radio-group
+                    formControlName="nonConforme"
+                    [(ngModel)]="nonConforme"
+                    valu
+                    class="form-inline"
+                  >
+                    <nb-radio value="false" class="mr-2">Non</nb-radio>
+                    <nb-radio value="true">Oui</nb-radio>
+                  </nb-radio-group>
+                </div>
+              </div>
+              <div
+                *ngIf="nonConforme == 'true'"
+                _ngcontent-gwy-c391=""
+                class="form-group row"
+              >
+                <label
+                  _ngcontent-gwy-c391=""
+                  for="inputEmail1"
+                  class="label col-sm-7 col-form-label"
+                  >Sécurisation nécessaire ?</label
+                >
+                <div _ngcontent-gwy-c391="" class="col-sm-5">
+                  <nb-radio-group class="form-inline">
+                    <nb-radio value="false" class="mr-2">Non</nb-radio>
+                    <nb-radio value="true">Oui</nb-radio>
+                  </nb-radio-group>
+                </div>
+              </div>
+            </form></nb-card-body
+          ></nb-card
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div _ngcontent-gwy-c391="" class="row">
+  
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+      ><nb-card-header _ngcontent-gwy-c391=""
+        >Décision</nb-card-header
+      ><nb-card-body _ngcontent-gwy-c391=""
+        ><form
+          _ngcontent-gwy-c391=""
+          novalidate=""
+          class="ng-untouched ng-pristine ng-valid"
+        >
+            <div class="row table-row table-doc-reference">
+          <div class="col-12 Decision-column px-3 py-2">
+            <div class="mt-2 mb-3">
+              <nb-checkbox>Aucune action sur le produit</nb-checkbox>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox>Retouche selon données approuvées</nb-checkbox>
+              <div class="d-flex align-items-center my-2">
+                <span>réf: </span>
+                <input type="text" nbInput fullWidth fieldSize="small" class="ml-2" placeholder="Small Input">
+              </div>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox>Retouche selon DRE</nb-checkbox>
+              <div class="d-flex align-items-center my-2">
+                <span>réf: </span>
+                <input type="text" nbInput fullWidth fieldSize="small" class="ml-2" placeholder="Small Input">
+              </div>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox>rebut</nb-checkbox>
+            </div>
+            <signature-cas-ajout [titre]="'Production'" [nomElementId]="'content-nom-qualite'" [dateElementId]="'content-date-qualite'" (notification)="getDataSignatureProduction($event)"></signature-cas-ajout>
+          </div>
+        </div>
+        </form></nb-card-body
+      ></nb-card
+    >
+  </div>
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <div class="row">
+      <div class="col-12">
+        <nb-card>
+          <nb-card-header> Décision sur le produit </nb-card-header>
+          <nb-card-body>
+            <h4>Donner votre décision</h4>
+            <ol class="mb-3">
+                <li>Consulter les documents précédents</li>
+                <li>Cocher votre avis sur le status de la non-conformité</li>
+                <li>Cocher votre décisions dans la table</li>
+                <li>Ecrire votre nom</li>
+                <li>Choisissez la date</li>
+                <li>Met votre signature</li>
+            </ol>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div _ngcontent-gwy-c391="" class="row">
+  
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+      ><nb-card-header _ngcontent-gwy-c391=""
+        >Justification</nb-card-header
+      ><nb-card-body _ngcontent-gwy-c391=""
+        ><form
+          _ngcontent-gwy-c391=""
+          novalidate=""
+          class="ng-untouched ng-pristine ng-valid"
+        >
+            <div class="row table-row table-doc-reference">
+              <div class="col Justification-column px-3">
+                <div class="mt-2 mb-5">
+                  Justification de la décision :
+                  <span class="ml-2" style="color: rgb(108 129 156)"
+                    >DRE sans impact</span
+                  >
+                </div>
+  
+                <div class="mb-5">Limitations / applicabilité :</div>
+  
+                <signature-cas-ajout [titre]="'Justification'" [nomElementId]="'content-nom-technique'" [dateElementId]="'content-date-technique'" (notification)="getDataSignatureProduction($event)"></signature-cas-ajout>
+
+              </div>
+        </div>
+        </form></nb-card-body
+      ></nb-card
+    >
+  </div>
+  <div _ngcontent-gwy-c391="" class="col-md-6">
+    <div class="row">
+      <div class="col-12">
+        <nb-card>
+          <nb-card-header> Décision sur le produit </nb-card-header>
+          <nb-card-body>
+            <h4>Donner votre décision</h4>
+            <ol class="mb-3">
+                <li>Consulter les documents précédents</li>
+                <li>Cocher votre avis sur le status de la non-conformité</li>
+                <li>Cocher votre décisions dans la table</li>
+                <li>Ecrire votre nom</li>
+                <li>Choisissez la date</li>
+                <li>Met votre signature</li>
+            </ol>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div _ngcontent-gwy-c391="" class="row">
+  
+  <div _ngcontent-gwy-c391="" class="col-md-8">
+    <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+      ><nb-card-header _ngcontent-gwy-c391=""
+        >Navigabilité</nb-card-header
+      ><nb-card-body _ngcontent-gwy-c391=""
+        ><form
+          _ngcontent-gwy-c391=""
+          novalidate=""
+          class="ng-untouched ng-pristine ng-valid"
+        >
+            <div class="row table-row table-doc-reference">
+              <div  class="col validation-column px-3">
+                <div class="row">
+                  <div style="border-right: none;" class="col-md-5 col-12">
+                    <div class="mt-2 mb-3">
+                      <nb-checkbox
+                        >Validation complémentaire nécesaire</nb-checkbox
+                      >
+                    </div>
+                    <signature-cas-ajout [titre]="'Navigabilité'" [nomElementId]="'content-nom-navigabilite'" [dateElementId]="'content-date-navigabilite'" (notification)="getDataSignatureNavigabilite($event)"></signature-cas-ajout>
+
+                  </div>
+                  <div class="col-md-7 col-12">
+                    <div class="mt-4 mb-3 d-flex">
+                      Dérogation sur produit livrable : <div class="ml-4"><nb-checkbox>Oui</nb-checkbox><nb-checkbox class="ml-2">Non</nb-checkbox></div>
+                      
+                    </div>
+                    <div class="mt-4 mb-5 d-flex">
+                      Justification : 
+                      
+                    </div>
+                    <div class="mt-4 mb-5 d-flex">
+                      Occurence Report (OR) : <div class="ml-4"><nb-checkbox>Oui</nb-checkbox><nb-checkbox class="ml-2">Non</nb-checkbox></div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </form></nb-card-body
+      ></nb-card
+    >
+  </div>
+
+  <div _ngcontent-gwy-c391="" style="padding: 0px 15px;" class="col-md-4">
+    <div class="row">
+      <div class="col-12">
+        <nb-card>
+          <nb-card-header> Décision sur le produit </nb-card-header>
+          <nb-card-body>
+            <h4>Donner votre décision</h4>
+            <ol class="mb-3">
+                <li>Consulter les documents précédents</li>
+                <li>Cocher votre avis sur le status de la non-conformité</li>
+                <li>Cocher votre décisions dans la table</li>
+                <li>Ecrire votre nom</li>
+                <li>Choisissez la date</li>
+                <li>Met votre signature</li>
+            </ol>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+</div>

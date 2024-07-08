@@ -1,0 +1,314 @@
+<div class="row mt-4">
+    <div class="col-md-12">
+        <nb-card-header>
+            <div class="header-title">DEMANDE DE RETOUCHE EXCEPTIONNELLE</div>
+            <div class="">
+                <div style="margin: 16px 60px;" class="row">
+                    <div class="col-3 yellow-space header-col ">
+                        <p>Matériel(s) (désignation) :</p>
+                    </div>
+                    <div class="col-3 header-col ">
+                        <p>{{anomalie?.designation}}</p>
+                    </div>
+                    <div class="col-3 yellow-space header-col ">
+                        <p>code article :</p> 
+                    </div>
+                    <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col ">
+                        <p>{{anomalie?.codeArticle}}</p>
+                    </div>
+                    <div class="col-3 yellow-space header-col ">
+                        <p>P/N :</p>
+                    </div>
+                    <div class="col-3 header-col ">
+                        <p>{{anomalie?.partNumber}}</p>
+                    </div>
+                    <div class="col-3 yellow-space header-col ">
+                        <p>S/N :</p> 
+                    </div>
+                    <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col ">
+                        <p>{{anomalie?.sn}}</p>
+                    </div>
+                </div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="form-title">
+                Demande de retouche exceptionnelle (METHODE)
+            </div>
+            <form class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-5 yellow-space header-col ">
+                            <p>Non-conformité associé :<br><small>(joindre copie de la Fiche NC)</small></p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-7 header-col nopadding dre-information">
+                            <p>{{anomalie?.demandeRetouche?.ncassocier}}</p>
+                        </div>
+                        <div class="col-5 yellow-space header-col ">
+                            <p>Résumé de la solution de retouche :<br><small>(Résumé de la solution proposée détaillée en p. 2)</small></p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-7 header-col nopadding dre-information">
+                            <p>{{anomalie?.demandeRetouche?.resumerSolution}}</p>
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>CDS article :</p> 
+                        </div>
+                        <div class="col-2 header-col nopadding dre-information-noBorder">
+                            <p>{{anomalie?.demandeRetouche?.cds}}</p>
+                        </div>
+                        <div class="col-2 yellow-space header-col dre-information-noBorder">
+                            <p>Montant des dérives :</p> 
+                        </div>
+                        <div class="col-2 header-col nopadding dre-information-noBorder">
+                            <p>{{anomalie?.demandeRetouche?.montantDerives}}</p>
+                        </div>
+                        <div class="col-2 yellow-space header-col ">
+                            <p>Coût estimé (MO+MP) :</p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-2 header-col nopadding dre-information">
+                            <p>{{anomalie?.demandeRetouche?.coutEstimer}}</p>
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Demandeur : <br> (Nom, Fonction)</p> 
+                        </div>
+                        <div class="col-3 header-col nopadding dre-information">
+                            <p>{{anomalie?.demandeRetouche?.demandeur}}</p>
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding dre-information">
+                                    <p>{{anomalie?.demandeRetouche?.date | date:"dd/MM/yyyy"}} </p>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding signature-detail-container dre-information">
+                                    <img [src]="getImageUrl(anomalie?.demandeRetouche?.signature)" alt="" >
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <br>
+            </form>
+        </nb-card-body>
+        <nb-card-body>
+            <div class="form-title">
+                VERIFICATION TECHNIQUE / Impact sur la définition (DT habilite)
+            </div>
+            <form  class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-8 yellow-space header-col ">
+                            <p>Process Identique au As Designed ? <small>(dont assemblage/désassemblage)</small></p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-4 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="processIdentique"
+                                class="form-inline px-lg-5 px-3"
+                                >
+                                <nb-radio 
+                                class="disabled-checkbox mr-2"
+                                [checked]="processIdentiqueChecked === false"
+                                value="false" >Non</nb-radio>
+                                <nb-radio
+                                class="disabled-checkbox"
+                                [checked]="processIdentiqueChecked === true"
+                                value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-8 yellow-space header-col ">
+                            <p>Matériaux Identique au As Designed ? Pas de nouvelle piéce ajoutée ?</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-4 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="materiauxIdentique"
+                                class="form-inline px-lg-5 px-3"
+                                >
+                                <nb-radio 
+                                class="disabled-checkbox mr-2"
+                                [checked]="materiauxIdentiqueChecked === false"
+                                value="false" >Non</nb-radio>
+                                <nb-radio
+                                class="disabled-checkbox"
+                                [checked]="materiauxIdentiqueChecked === true"
+                                value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-8 yellow-space header-col ">
+                            <p>Interchangeabilité maintenue ? Maintenance Identique</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-4 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="maintenanceIdentique"
+                                class="form-inline px-lg-5 px-3"
+                                >
+                                <nb-radio 
+                                class="disabled-checkbox mr-2"
+                                [checked]="maintenanceIdentiqueChecked === false"
+                                value="false" >Non</nb-radio>
+                                <nb-radio
+                                class="disabled-checkbox"
+                                [checked]="maintenanceIdentiqueChecked === true"
+                                value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-8 yellow-space header-col ">
+                            <p>CONCLUSION : Remise en conformité à la définition ?</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-4 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="conclusion"
+                                class="form-inline px-lg-5 px-3"
+                                >
+                                <nb-radio 
+                                class="disabled-checkbox mr-2"
+                                [checked]="conclusionChecked === false"
+                                value="false" >Non</nb-radio>
+                                <nb-radio
+                                class="disabled-checkbox"
+                                [checked]="conclusionChecked === true"
+                                value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-8 yellow-space header-col ">
+                            <p>Nécesseité d'une vérification par la DT du produit retouché ?</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-4 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="verificationNecessaire"
+                                class="form-inline px-lg-5 px-3"
+                                >
+                                <nb-radio 
+                                class="disabled-checkbox mr-2"
+                                [checked]="verificationNecessaireChecked === false"
+                                value="false" >Non</nb-radio>
+                                <nb-radio
+                                class="disabled-checkbox"
+                                [checked]="verificationNecessaireChecked === true"
+                                value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        
+                        <div class="col-3 yellow-space header-col ">
+                            <p>Commentaires :</p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-9 header-col nopadding dre-information">
+                            <p>{{anomalie?.verificationTechnique?.commentaires}}</p>
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Vérificateur DT : <br> (Nom, Fonction)</p> 
+                        </div>
+                        <div class="col-3 header-col nopadding dre-information-noBorder">
+                            <p>{{anomalie?.verificationTechnique?.verficateur}}</p>
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding dre-information">
+                                    <p>{{anomalie?.verificationTechnique?.date | date:"dd/MM/yyyy"}}</p>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding signature-detail-container dre-information">
+                                    <img [src]="getImageUrl(anomalie?.verificationTechnique?.signature)" alt="" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <br>
+            </form>
+        </nb-card-body>
+        <nb-card-body>
+            <div class="form-title">
+                PRISE EN COMPTE PAR ATELIER (QUALITE PRODUIT)
+            </div>
+            <form [formGroup]="qualiteDreForm" (ngSubmit)="onSubmit()" class="form-inline">
+                    <div style="margin: 16px 80px;" class="row row-conf">
+                        <div class="col-9 yellow-space header-col ">
+                            <p>Prise en compte sur la FENC associée :</p>
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-3 header-col nopadding d-flex">
+                            <nb-radio-group
+                                name="verificationNecessaire"
+                                class="form-inline px-lg-5 px-3"
+                                >
+                                <nb-radio 
+                                class="disabled-checkbox mr-2"
+                                [checked]="priseEnCompteChecked === false"
+                                value="false" >Non</nb-radio>
+                                <nb-radio
+                                class="disabled-checkbox"
+                                [checked]="priseEnCompteChecked === true"
+                                value="true">Oui</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="col-3 yellow-space header-col ">
+                            <p>Commentaires :</p> 
+                        </div>
+                        <div style="border-right: 1px solid #d2d2d2 !important;" class="col-9 header-col nopadding dre-inforation">
+                            <p>{{anomalie?.priseEnCompte?.commentaires}}</p>
+                        </div>
+                        <div class="col-4 yellow-space header-col ">
+                            <p>Qualité Produit : <br> (Nom, Fonction)</p> 
+                        </div>
+                        <div class="col-3 header-col nopadding dre-information-noBorder">
+                            <p>{{anomalie?.priseEnCompte?.qualiteProduit}}</p>
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Date :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding dre-information">
+                                    <p>{{anomalie?.priseEnCompte?.date | date:"dd/MM/yyyy"}}</p>
+                                </div>
+                                <div class="col-6 yellow-space header-col ">
+                                    <p>Signature :</p> 
+                                </div>
+                                <div style="border-right: 1px solid #d2d2d2 !important;" class="col-6 header-col nopadding signature-detail-container dre-information">
+                                    <img [src]="getImageUrl(anomalie?.priseEnCompte?.signature)" alt="" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin: 0px auto;" class="mt-4">
+                        <button  nbButton status="basic" (click)="openWindow(contentTemplate)">Voir les piéces Jointes</button>
+                    </div>
+            </form>
+            
+        </nb-card-body>
+    </div>
+  </div>
+
+  <ng-template style="width: 70%;" #contentTemplate let-data>
+    <p style="width: 640px;">
+        {{ data.text }}
+    </p>
+    <div class="files-container mb-5">
+  
+        <div class="importedFiles-container-gpt">
+          <div *ngIf="dreFiles.length > 0 ; else ifBlock1"></div>
+            <div *ngFor="let dreFile of dreFiles; let i = index" class="display-files-gpt">
+                <div class="display-files-gpt-container">
+                    <i style="font-size: 50px;" class="fa fa-file"></i>
+                    <div class="file-link-container">
+                      <i class="far fa-hand-point-right mr-2"></i><a target="_blank" (click)="downloadFile(dreFile.fileName)">{{ dreFile.fileName }}</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>  
+        <ng-template #ifBlock1>
+          <div class="display-files-gpt">
+            <div class="display-files-gpt-container">
+                <i style="font-size: 80px;color: rgb(247, 0, 0);" class="fa fa-ban"></i>
+            </div>
+          </div>
+        </ng-template>
+    </div>
+  </ng-template>

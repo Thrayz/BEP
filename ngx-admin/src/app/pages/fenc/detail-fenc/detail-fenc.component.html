@@ -1,0 +1,549 @@
+<div class="mt-5">
+    <nb-stepper orientation="horizontal">
+      <nb-step [label]="labelOne">
+        <ng-template #labelOne>Anomalie</ng-template>
+        <h3>FENC</h3>
+        <div style="max-width: 1260px" class="container">
+          <div class="row table-row">
+            <div class="col">
+              Code Article M3:
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.codeArticle }}
+              </p>
+            </div>
+            <div class="col">
+              Part Number / Réf. Techn:
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.partNumber }}</p>
+            </div>
+            <div class="col">
+              Désignation:
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.designation }}</p>
+            </div>
+            <div class="col">
+              Date détection:
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.dateDetection | date:"dd/MM/yyyy" }}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col col-4">
+              Lieu détection:
+              <p style="color: rgb(108 129 156)">
+                {{anomalieSelected?.lieuDetection}}
+              </p>
+            </div>
+            <div class="col col-2">
+              Qui l'a détecté:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.quiDetecter}}</p>
+            </div>
+            <div class="col col-2">
+              S/N (ou BAP ou lot):
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.sn}}</p>
+            </div>
+            <div class="col col-2">
+              OF:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.of}}</p>
+            </div>
+            <div class="col col-2">
+              Quantité:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.quantite}}</p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Quel est l'écart détecté ?
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.typeEcart }}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+              habituelle de faire ?
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.standard }}</p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Préciser la zone impactée sur le produit:
+              <p style="color: rgb(108 129 156)">
+                {{anomalieSelected?.zone}}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Comment l'écart a-t-il été détecté ?
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.typeDetection}}</p>
+            </div>
+          </div>
+          <hr />
+        </div>
+            <button nbButton nbStepperNext>Suivant</button>
+            <button (click)="openWindow(contentTemplate)" nbButton >Voir piéces jointes</button>
+      </nb-step>
+      <nb-step [label]="labelTwo">
+        <ng-template #labelTwo>Status</ng-template>
+        <h3>FENC</h3>
+
+        <!--************** Premiére étapes ****************-->
+
+        <div style="max-width: 1260px" class="container">
+          <div class="row table-row">
+            <div class="col">
+              Code Article M3:
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.codeArticle }}
+              </p>
+            </div>
+            <div class="col">
+              Part Number / Réf. Techn:
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.partNumber }}</p>
+            </div>
+            <div class="col">
+              Désignation:
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.designation }}</p>
+            </div>
+            <div class="col">
+              Date détection:
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.dateDetection | date:"dd/MM/yyyy" }}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col col-4">
+              Lieu détection:
+              <p style="color: rgb(108 129 156)">
+                {{anomalieSelected?.lieuDetection}}
+              </p>
+            </div>
+            <div class="col col-2">
+              Qui l'a détecté:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.quiDetecter}}</p>
+            </div>
+            <div class="col col-2">
+              S/N (ou BAP ou lot):
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.sn}}</p>
+            </div>
+            <div class="col col-2">
+              OF:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.of}}</p>
+            </div>
+            <div class="col col-2">
+              Quantité:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.quantite}}</p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Quel est l'écart détecté ?
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.typeEcart }}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+              habituelle de faire ?
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.standard }}</p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Préciser la zone impactée sur le produit:
+              <p style="color: rgb(108 129 156)">
+                {{anomalieSelected?.zone}}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Comment l'écart a-t-il été détecté ?
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.typeDetection}}</p>
+            </div>
+          </div>
+
+          <!--***********************************************-->
+
+          <hr />
+
+          <!--************** Deuxiéme étapes ****************-->
+
+          <div  class="row table-row">
+            <div class="col-3 col">Non-conformité confirmé ?</div>
+            <div class="col"><nb-checkbox class="disabled-checkbox" [checked]="NonConformiteChecked === false" >Non</nb-checkbox></div>
+            <div class="col"><nb-checkbox class="disabled-checkbox" [checked]="NonConformiteChecked === true" >Oui</nb-checkbox></div>
+          </div> 
+          <div class="row table-row">
+            <div class="col-3 col">sécurisation nécessaire ?</div>
+            <div style="background-color: #cecece" class="col"></div>
+            <div class="col">
+              <nb-checkbox class="mr-3 disabled-checkbox" [checked]="securisationChecked === true" >Oui</nb-checkbox>
+              <nb-checkbox class="disabled-checkbox" [checked]="securisationChecked === false" >Non</nb-checkbox>
+            </div>
+          </div>
+
+          <!--***********************************************-->
+
+          <button nbButton nbStepperPrevious>Retour</button>
+            <button nbButton nbStepperNext>Suivant</button>
+            <button (click)="openWindow(contentTemplate)" nbButton >Voir piéces jointes</button>
+        </div>
+      </nb-step>
+      <nb-step label="Decision Produit">
+        <h3>FENC</h3>
+
+        <!--************** Premiére étapes ****************-->
+
+        <div style="max-width: 1260px" class="container">
+          <div class="row table-row">
+            <div class="col">
+              Code Article M3:
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.codeArticle }}
+              </p>
+            </div>
+            <div class="col">
+              Part Number / Réf. Techn:
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.partNumber }}</p>
+            </div>
+            <div class="col">
+              Désignation:
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.designation }}</p>
+            </div>
+            <div class="col">
+              Date détection:
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.dateDetection | date:"dd/MM/yyyy" }}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col col-4">
+              Lieu détection:
+              <p style="color: rgb(108 129 156)">
+                {{anomalieSelected?.lieuDetection}}
+              </p>
+            </div>
+            <div class="col col-2">
+              Qui l'a détecté:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.quiDetecter}}</p>
+            </div>
+            <div class="col col-2">
+              S/N (ou BAP ou lot):
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.sn}}</p>
+            </div>
+            <div class="col col-2">
+              OF:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.of}}</p>
+            </div>
+            <div class="col col-2">
+              Quantité:
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.quantite}}</p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Quel est l'écart détecté ?
+              <p style="color: rgb(108 129 156)">
+                {{ anomalieSelected?.typeEcart }}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+              habituelle de faire ?
+              <p style="color: rgb(108 129 156)">{{ anomalieSelected?.standard }}</p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Préciser la zone impactée sur le produit:
+              <p style="color: rgb(108 129 156)">
+                {{anomalieSelected?.zone}}
+              </p>
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col">
+              Comment l'écart a-t-il été détecté ?
+              <p style="color: rgb(108 129 156)">{{anomalieSelected?.typeDetection}}</p>
+            </div>
+          </div>
+
+          <!--***********************************************-->
+
+          <hr />
+
+          <!--************** Deuxiéme étapes ****************-->
+
+          <div  class="row table-row">
+            <div class="col-3 col">Non-conformité confirmé ?</div>
+            <div class="col"><nb-checkbox class="disabled-checkbox" [checked]="NonConformiteChecked === false">Non</nb-checkbox></div>
+            <div class="col"><nb-checkbox class="disabled-checkbox" [checked]="NonConformiteChecked === true">Oui</nb-checkbox></div>
+          </div> 
+          <div class="row table-row">
+            <div class="col-3 col">sécurisation nécessaire ?</div>
+            <div style="background-color: #cecece" class="col"></div>
+            <div class="col">
+              <nb-checkbox class="mr-3 disabled-checkbox" [checked]="securisationChecked === true">Oui</nb-checkbox>
+              <nb-checkbox class="disabled-checkbox" [checked]="securisationChecked === false">Non</nb-checkbox>
+            </div>
+          </div>
+
+          <!--***********************************************-->
+
+          <hr />
+
+          <!--************** Troisiéme étapes ****************-->
+
+          <div class="row table-row">
+            <div class="col-12 col-md-4 text-center">Décision</div>
+            <div class="col-12 col-md-4 text-center">Justification</div>
+            <div class="col-12 col-md-4 text-center">Maîtrise du produit</div>
+          </div>
+
+          <div class="row table-row table-doc-reference">
+            <div class="col-12 col-md-4 Decision-column px-3">
+              <div class="mt-2 mb-3">
+                <nb-checkbox
+                  [(ngModel)]="aucuneActionChecked"
+                  class="disabled-checkbox"
+                  >Aucune action sur le produit</nb-checkbox
+                >
+              </div>
+              <div class="mb-3">
+                <nb-checkbox
+                  [(ngModel)]="RetoucheDonneesChecked"
+                  class="disabled-checkbox"
+                  >Retouche selon données approuvées</nb-checkbox
+                >
+                <div class="d-flex">
+                  <span>réf: </span>
+                  <span class="ml-2" style="color: rgb(108 129 156)">{{
+                    anomalieSelected?.decision?.refRetoucheDonnees
+                  }}</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox
+                  [(ngModel)]="RetoucheDreChecked"
+                  class="disabled-checkbox"
+                  >Retouche selon DRE</nb-checkbox
+                >
+                <div class="d-flex">
+                  <span>réf: </span>
+                  <span class="ml-2" style="color: rgb(108 129 156)">{{
+                    anomalieSelected?.decision?.refRetoucheDre
+                  }}</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox [(ngModel)]="RebutChecked" class="disabled-checkbox"
+                  >rebut</nb-checkbox
+                >
+              </div>
+              <div class="signature-table">
+                <div class="row table-row">
+                  <div class="col text-center">Production</div>
+                </div>
+                <div class="row table-row">
+                  <div class="col">
+                    <div class="d-flex">
+                      <p>Nom :</p>
+                      <p>{{ anomalieSelected?.decision?.nom }}</p>
+                    </div>
+                    <div class="d-flex">
+                      <p>Date :</p>
+                      <p>{{ anomalieSelected?.decision?.date | date:"dd/MM/yyyy" }}</p>
+                    </div>
+                    <div class="d-flex signature-detail-container">
+                      <p>Signature :</p>
+                      <img [src]="getImageUrl(anomalieSelected?.decision?.signature)" alt="" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 col-md-4 Justification-column px-3">
+              <div class="mt-2 mb-5">
+                Justification de la décision :
+                <span class="ml-2" style="color: rgb(108 129 156)">{{anomalieSelected?.justification?.justification}}</span>
+              </div>
+  
+              <div class="mb-5">
+                Limitations / applicabilité :
+                <span class="ml-2" style="color: rgb(108 129 156)">{{anomalieSelected?.justification?.limitation}}</span>
+              </div>
+  
+              <div class="signature-table">
+                <div class="row table-row">
+                  <div class="col text-center">Technique / Méthodes</div>
+                </div>
+                <div class="row table-row">
+                  <div class="col">
+                    <div class="d-flex">
+                      <p>Nom :</p>
+                      <p>{{ anomalieSelected?.justification?.nom }}</p>
+                    </div>
+                    <div class="d-flex">
+                      <p>Date :</p>
+                      <p>{{ anomalieSelected?.justification?.date | date:"dd/MM/yyyy" }}</p>
+                    </div>
+                    <div class="d-flex signature-detail-container">
+                      <p>Signature :</p>
+                      <img [src]="getImageUrl(anomalieSelected?.justification?.signature)" alt="" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 col-md-4 Matirise-column px-3">
+              <div class="mt-2 mb-3">
+                <nb-checkbox class="disabled-checkbox" [(ngModel)]="fencTransmettreChecked"
+                  >FENC à transmeetre
+                  <small
+                    >(atelier
+                    <span class="ml-2" style="color: rgb(108 129 156)">____</span
+                    >)</small
+                  ></nb-checkbox
+                >
+              </div>
+              <div class="mb-3">
+                <nb-checkbox [(ngModel)]="inspectionRecordChecked" class="disabled-checkbox">Inspection Record</nb-checkbox>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox [(ngModel)]="planSurveillanceChecked" class="disabled-checkbox">Plan de surveillance Renforcé</nb-checkbox>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox [(ngModel)]="resolutionProblemeChecked" class="disabled-checkbox">Résolution de Probléme (RDP)</nb-checkbox>
+              </div>
+              <div class="mb-3">
+                <nb-checkbox [(ngModel)]="aucunSuiviChecked" class="disabled-checkbox">Aucun suivi nécessaire</nb-checkbox>
+              </div>
+              <div class="signature-table">
+                <div class="row table-row">
+                  <div class="col text-center">Qualité Produit</div>
+                </div>
+                <div class="row table-row">
+                  <div class="col">
+                    <div class="d-flex">
+                      <p>Nom :</p>
+                      <p>{{ anomalieSelected?.maitrise?.nom }}</p>
+                    </div>
+                    <div class="d-flex">
+                      <p>Date :</p>
+                      <p>{{ anomalieSelected?.maitrise?.date | date:"dd/MM/yyyy" }}</p>
+                    </div>
+                    <div class="d-flex signature-detail-container">
+                      <p>Signature :</p>
+                      <img [src]="getImageUrl(anomalieSelected?.maitrise?.signature)" alt="" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row table-row table-doc-reference">
+            <div  class="col-12 validation-column px-3">
+              <div class="row">
+                <div style="border-right: none;" class="col-md-4 col-12">
+                  <div class="mt-2 mb-3">
+                    <nb-checkbox
+                    class="disabled-checkbox"
+                      >Validation complémentaire nécesaire</nb-checkbox
+                    >
+                  </div>
+                  <div class="signature-table">
+                    <div class="row table-row">
+                      <div class="col text-center">Navigabilité</div>
+                    </div>
+                    <div class="row table-row">
+                      <div class="col">
+                        <div class="d-flex">
+                          <p>Nom :</p>
+                          <p>{{ anomalieSelected?.validationNav?.nom }}</p>
+                        </div>
+                        <div class="d-flex">
+                          <p>Date :</p>
+                          <p>{{ anomalieSelected?.validationNav?.date | date:"dd/MM/yyyy" }}</p>
+                        </div>
+                        <div class="d-flex signature-detail-container">
+                          <p>Signature :</p>
+                          <img [src]="getImageUrl(anomalieSelected?.validationNav?.signature)" alt="" >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8 col-12">
+                  <div class="mt-4 mb-3 d-flex">
+                    Dérogation sur produit livrable : 
+                    <div class="ml-4">
+                      <nb-checkbox [checked]="derogationProduitChecked === true" class="disabled-checkbox">Oui</nb-checkbox>
+                      <nb-checkbox [checked]="derogationProduitChecked === false" class="disabled-checkbox ml-2">Non</nb-checkbox>
+                    </div>
+                    
+                  </div>
+                  <div class="mt-4 mb-5 d-flex">
+                    Justification : 
+                    <p>{{anomalieSelected?.validationNav?.justification}}</p>
+                  </div>
+                  <div class="mt-4 mb-5 d-flex">
+                    Occurence Report (OR) : 
+                    <nb-checkbox [checked]="occurenceReportChecked === true" class="disabled-checkbox">Oui</nb-checkbox>
+                    <nb-checkbox [checked]="occurenceReportChecked === false" class="disabled-checkbox ml-2">Non</nb-checkbox>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--***********************************************-->
+          <div class="mt-3">
+            <button nbButton nbStepperPrevious>Retour</button>
+            <button (click)="openWindow(contentTemplate)" nbButton >Voir piéces jointes</button>
+            <button (click)="Imprime()" nbButton status="primary" >Imprimer FENC</button>
+          </div>
+          
+        </div>
+      </nb-step>
+    </nb-stepper>
+  </div>
+
+  <ng-template style="width: 70%;" #contentTemplate let-data>
+    <p style="width: 640px;">
+        {{ data.text }}
+    </p>
+    <div class="files-container mb-5">
+  
+        <div class="importedFiles-container-gpt">
+          <div *ngIf="anomalieFiles.length > 0 ; else ifBlock1"></div>
+            <div *ngFor="let anomalieFile of anomalieFiles; let i = index" class="display-files-gpt">
+                <div class="display-files-gpt-container">
+                    <i style="font-size: 50px;" class="fa fa-file"></i>
+                    <div class="file-link-container">
+                      <i class="far fa-hand-point-right mr-2"></i><a target="_blank" (click)="downloadFile(anomalieFile.fileName)">{{ anomalieFile.fileName }}</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>  
+        <ng-template #ifBlock1>
+          <div class="display-files-gpt">
+            <div class="display-files-gpt-container">
+                <i style="font-size: 80px;color: rgb(247, 0, 0);" class="fa fa-ban"></i>
+            </div>
+          </div>
+        </ng-template>
+    </div>
+  </ng-template>
+  

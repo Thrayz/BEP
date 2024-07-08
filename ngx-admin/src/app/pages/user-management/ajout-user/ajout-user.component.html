@@ -1,0 +1,113 @@
+
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col-md-11">
+      <nb-card>
+        <nb-card-header>Ajout d'un utilisateur</nb-card-header>
+        <nb-card-body>
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mx-5 addUser-form mt-4">
+            <div class="form-group row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group row ">
+                  <label for="inputEmail1" class="label col-sm-3 col-form-label ">Nom :</label>
+                  <div class="col-sm-9">
+                    <input formControlName="nom" type="text" class="input-conf" nbInput fullWidth id="inputEmail1" placeholder="Ecrire le nom">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group row ">
+                  <label for="inputEmail1" class="label col-sm-3 col-form-label">Prenom :</label>
+                  <div class="col-sm-9">
+                    <input formControlName="prenom" type="text" class="input-conf" nbInput fullWidth id="inputEmail1" placeholder="Ecrire le prenom">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group row ">
+                  <label for="inputEmail1" class="label col-sm-3 col-form-label">Matricule :</label>
+                  <div class="col-sm-9">
+                    <input formControlName="matricule" type="text" class="input-conf" nbInput fullWidth id="inputEmail1" placeholder="Ecrire la matricule">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group row">
+                  <label for="inputPassword2" class="label col-sm-3 col-form-label">Poste :</label>
+                  <div class="col-sm-9">
+                    <input formControlName="poste" type="text" class="input-conf" nbInput fullWidth id="inputPassword2" placeholder="Ecrire la poste">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group row ">
+                  <label for="inputEmail1" class="label col-sm-3 col-form-label">Email :</label>
+                  <div class="col-sm-9">
+                    <input formControlName="email" type="email" class="input-conf" nbInput fullWidth id="inputEmail1" placeholder="Ecrire l'email">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group row">
+                  <label for="inputPassword2" class="label col-sm-3 col-form-label">Service :</label>
+                  <nb-select formControlName="serviceStatus" class=" col-sm-9" selected="1">
+                      <nb-option disabled value="1">Choisir Service</nb-option>
+                      <nb-option value="ADMIN">Admin</nb-option>
+                      <nb-option value="OPERATION">Operation</nb-option>
+                      <nb-option value="PRODUCTION">Production</nb-option>
+                      <nb-option value="METHODE">Methode</nb-option>
+                      <nb-option value="QUALITE_PRODUIT">Qualité Produit</nb-option>
+                      <nb-option value="QUALITE_PROGRAMME">Qualité Programme</nb-option>
+                      <nb-option value="NAVIGATION">Navigabilité</nb-option>
+                      <nb-option value="BE">Bureau d'Etude</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group row">
+                  <label for="inputPassword2" class="label col-sm-3 col-form-label">UAP :</label>
+                  <nb-select formControlName="uap" class=" col-sm-9" selected="1">
+                      <nb-option disabled value="1">Choisir l'UAP</nb-option>
+                      <nb-option value="Reservoir">Réservoir</nb-option>
+                      <nb-option value="Degivreur">Dégivreur</nb-option>
+                  </nb-select>
+                </div>
+              </div>
+            </div>
+            
+            <div *ngIf="fs['nom'].invalid && (fs['nom'].dirty || fs['nom'].touched)">
+              <div class="text-danger" *ngIf="fs['nom'].errors && fs['nom'].errors['required']" >*Le nom ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['prenom'].invalid && (fs['prenom'].dirty || fs['prenom'].touched)">
+              <div class="text-danger" *ngIf="fs['prenom'].errors && fs['prenom'].errors['required']" >*Le prenom ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['email'].invalid && (fs['email'].dirty || fs['email'].touched)">
+              <div class="text-danger" *ngIf="fs['email'].errors && fs['email'].errors['required']" >*L'email ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['matricule'].invalid && (fs['matricule'].dirty || fs['matricule'].touched)">
+              <div class="text-danger" *ngIf="fs['matricule'].errors && fs['matricule'].errors['required']" >*La matricule ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['serviceStatus'].invalid && (fs['serviceStatus'].dirty || fs['serviceStatus'].touched)">
+              <div class="text-danger" *ngIf="fs['serviceStatus'].errors && fs['serviceStatus'].errors['required']" >*Le service ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['poste'].invalid && (fs['poste'].dirty || fs['poste'].touched)">
+              <div class="text-danger" *ngIf="fs['poste'].errors && fs['poste'].errors['required']" >*La poste ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['uap'].invalid && (fs['uap'].dirty || fs['uap'].touched)">
+              <div class="text-danger" *ngIf="fs['uap'].errors && fs['uap'].errors['required']" >*L'UAP ne peut pas être null</div>
+            </div>
+
+              
+              
+            <div class="form-group row mt-4">
+              <div class="align-items-center text-center col-12 ">
+                <button type="submit" nbButton status="primary">Ajouter</button>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="col"></div>
+  </div>

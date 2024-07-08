@@ -1,0 +1,10 @@
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.nb-theme-default li{
+    color: white !important;
+  }
+
+  .nb-theme-default [nbInput].status-basic{
+    border-color: black !important;
+  }

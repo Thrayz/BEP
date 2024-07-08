@@ -1,0 +1,11 @@
+<nb-card>
+    <nb-card-header>
+      Dre en attente
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" (userRowSelect)="handleGridSelected($event)" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

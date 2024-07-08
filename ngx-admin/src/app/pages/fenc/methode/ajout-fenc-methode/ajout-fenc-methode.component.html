@@ -1,0 +1,384 @@
+<nb-card >
+  <nb-card-body>
+    <div class="text-center">
+      <h3 class="my-3">FENC</h3>
+      <hr class="mb-2"/>
+      <div style="max-width: 1260px" class="container">
+        <div class="row table-row">
+          <div class="col">
+            Code Article M3:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.codeArticle }}
+            </p>
+          </div>
+          <div class="col">
+            Part Number / Réf. Techn:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.partNumber }}
+            </p>
+          </div>
+          <div class="col">
+            Désignation:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.designation }}
+            </p>
+          </div>
+          <div class="col">
+            Date détection:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.dateDetection | date:"dd/MM/yyyy" }}
+            </p>
+          </div>
+        </div>
+        <div class="row table-row">
+          <div class="col col-4">
+            Lieu détection:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.lieuDetection }}
+            </p>
+          </div>
+          <div class="col col-2">
+            Qui l'a détecté:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.quiDetecter }}
+            </p>
+          </div>
+          <div class="col col-2">
+            S/N (ou BAP ou lot):
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.sn }}
+            </p>
+          </div>
+          <div class="col col-2">
+            OF:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.of }}
+            </p>
+          </div>
+          <div class="col col-2">
+            Quantité:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.quantite }}
+            </p>
+          </div>
+        </div>
+        <div class="row table-row">
+          <div class="col">
+            Quel est l'écart détecté ?
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.typeEcart }}
+            </p>
+          </div>
+        </div>
+        <div class="row table-row">
+          <div class="col">
+            Pourquoi est ce un probléme ? Quel est le standard ou la maniére
+            habituelle de faire ?
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.standard }}
+            </p>
+          </div>
+        </div>
+        <div class="row table-row">
+          <div class="col">
+            Préciser la zone impactée sur le produit:
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.zone }}
+            </p>
+          </div>
+        </div>
+        <div class="row table-row">
+          <div class="col">
+            Comment l'écart a-t-il été détecté ?
+            <p style="color: rgb(108 129 156)">
+              {{ previousFencData?.typeDetection }}
+            </p>
+          </div>
+        </div>
+
+        <!--************** Deuxiéme étapes ****************-->
+        <div
+          *ngIf="
+            anomalie.securisation != null || anomalie.nonConformite != null
+          "
+        >
+          <hr />
+          <div class="row table-row">
+            <div class="col-3 col">Non-conformité confirmé ?</div>
+            <div class="col">
+              <nb-checkbox
+                class="disabled-checkbox"
+                [(ngModel)]="!NonConformiteChecked"
+                >Non</nb-checkbox
+              >
+            </div>
+            <div class="col">
+              <nb-checkbox
+                class="disabled-checkbox"
+                [(ngModel)]="NonConformiteChecked"
+                >Oui</nb-checkbox
+              >
+            </div>
+          </div>
+          <div class="row table-row">
+            <div class="col-3 col">sécurisation nécessaire ?</div>
+            <div style="background-color: #cecece" class="col"></div>
+            <div class="col">
+              <nb-checkbox
+                class="mr-3 disabled-checkbox"
+                [(ngModel)]="securisationChecked"
+                >Oui (compléter volet C)</nb-checkbox
+              ><nb-checkbox
+                class="disabled-checkbox"
+                [(ngModel)]="!securisationChecked"
+                >Non</nb-checkbox
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!--************** Troisiéme étapes ****************-->
+
+        <div class="row table-row">
+          <div class="col-12 col-md-4 text-center">Décision</div>
+          <div class="col-12 col-md-4 text-center">Justification</div>
+          <div class="col-12 col-md-4 text-center">Maîtrise du produit</div>
+        </div>
+
+        <div class="row table-row table-doc-reference">
+          <div class="col-12 col-md-4 Decision-column px-3">
+            <div class="mt-2 mb-3">
+              <nb-checkbox
+                [(ngModel)]="aucuneActionChecked"
+                class="disabled-checkbox"
+                >Aucune action sur le produit</nb-checkbox
+              >
+            </div>
+            <div class="mb-3">
+              <nb-checkbox
+                [(ngModel)]="RetoucheDonneesChecked"
+                class="disabled-checkbox"
+                >Retouche selon données approuvées</nb-checkbox
+              >
+              <div class="d-flex">
+                <span>réf: </span>
+                <span class="ml-2" style="color: rgb(108 129 156)">{{
+                  anomalie.decision.refRetoucheDonnees
+                }}</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox
+                [(ngModel)]="RetoucheDreChecked"
+                class="disabled-checkbox"
+                >Retouche selon DRE</nb-checkbox
+              >
+              <div class="d-flex">
+                <span>réf: </span>
+                <span class="ml-2" style="color: rgb(108 129 156)">{{
+                  anomalie.decision.refRetoucheDre
+                }}</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox [(ngModel)]="RebutChecked" class="disabled-checkbox"
+                >rebut</nb-checkbox
+              >
+            </div>
+            <div class="signature-table">
+              <div class="row table-row">
+                <div class="col text-center">Production</div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  <div class="d-flex">
+                    <p>Nom :</p>
+                    <p>{{ anomalie.decision.nom }}</p>
+                  </div>
+                  <div class="d-flex">
+                    <p>Date :</p>
+                    <p>{{ anomalie.decision.date | date:"dd/MM/yyyy" }}</p>
+                  </div>
+                  <div class="d-flex signature-field-container"><p>Signature :</p>
+                    <img [src]="getImageUrl(anomalie.decision?.signature)" alt="" >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 Justification-column px-3">
+            <div class="mt-2 mb-5">
+              Justification de la décision :
+              <span class="ml-2" style="color: rgb(108 129 156)">{{anomalie.justification?.justification}}</span>
+            </div>
+
+            <div class="mb-5">
+              Limitations / applicabilité :
+              <span class="ml-2" style="color: rgb(108 129 156)">{{anomalie.justification?.limitation}}</span>
+            </div>
+
+            <div class="signature-table">
+              <div class="row table-row">
+                <div class="col text-center">Technique / Méthodes</div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  <div class="d-flex">
+                    <p>Nom :</p>
+                    <p>{{ anomalie.justification?.nom }}</p>
+                  </div>
+                  <div class="d-flex">
+                    <p>Date :</p>
+                    <p>{{ anomalie.justification?.date | date:"dd/MM/yyyy" }}</p>
+
+                  </div>
+                  <div class="d-flex signature-field-container"><p>Signature :</p>
+                    <img [src]="getImageUrl(anomalie.justification?.signature)" alt="" >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 Matirise-column px-3">
+            <div class="mt-2 mb-3">
+              <nb-checkbox
+                >FENC à transmeetre
+                <small
+                  >(atelier
+                  <span class="ml-2" style="color: rgb(108 129 156)">____</span
+                  >)</small
+                ></nb-checkbox
+              >
+            </div>
+            <div class="mb-3">
+              <nb-checkbox class="disabled-checkbox">Inspection Record</nb-checkbox>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox class="disabled-checkbox">Plan de surveillance Renforcé</nb-checkbox>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox class="disabled-checkbox">Résolution de Probléme (RDP)</nb-checkbox>
+            </div>
+            <div class="mb-3">
+              <nb-checkbox class="disabled-checkbox">Aucun suivi nécessaire</nb-checkbox>
+            </div>
+            <div class="signature-table">
+              <div class="row table-row">
+                <div class="col text-center">Qualité Produit</div>
+              </div>
+              <div class="row table-row">
+                <div class="col">
+                  <div class="d-flex"><p>Nom :</p></div>
+                  <div class="d-flex"><p>Date :</p></div>
+                  <div class="d-flex mb-4"><p>Signature :</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+  <div class="mt-3 confirmation">
+    <button (click)="openWindow(contentTemplate)" class="btn button-Decision grey effect">Voir piéces jointes</button>
+  </div>
+</nb-card>
+
+<div *ngIf="!anomalie.justification" _ngcontent-gwy-c391="" class="row">
+    <div _ngcontent-gwy-c391="" class="col-md-6">
+      <nb-card _ngcontent-gwy-c391="" _nghost-gwy-c96=""
+        ><nb-card-header _ngcontent-gwy-c391="">Justification</nb-card-header
+        ><nb-card-body _ngcontent-gwy-c391=""
+          ><form
+            [formGroup]="methodeFencForm"
+            _ngcontent-gwy-c391=""
+            novalidate=""
+            class="ng-untouched ng-pristine ng-valid"
+          >
+            <div class="row table-row table-doc-reference">
+              <div class="col Justification-column">
+                <div class="my-2">Justification de la décision :</div>
+                <textarea formControlName="justification" rows="2" nbInput fullWidth shape="round" placeholder="Text Area"></textarea>
+
+                <div class="my-2">Limitations / applicabilité :</div>
+                <textarea formControlName="limitation" rows="2" nbInput fullWidth shape="round" placeholder="Text Area"></textarea>
+
+                <signature-cas-ajout
+                  [titre]="'Justification'"
+                  [nomElementId]="'content-nom-technique'"
+                  [dateElementId]="'content-date-technique'"
+                  (notification)="getDataSignatureJustification($event)"
+                ></signature-cas-ajout>
+              </div>
+            </div></form>
+            <div *ngIf="fs['justification'].invalid && (fs['justification'].dirty || fs['justification'].touched)">
+              <div class="text-danger" *ngIf="fs['justification'].errors && fs['justification'].errors['required']" >*La justification ne peut pas être null</div>
+            </div>
+            <div *ngIf="fs['limitation'].invalid && (fs['limitation'].dirty || fs['limitation'].touched)">
+              <div class="text-danger" *ngIf="fs['limitation'].errors && fs['limitation'].errors['required']" >*La limitation ne peut pas être null</div>
+            </div>
+            </nb-card-body
+      ></nb-card>
+    </div>
+    <div _ngcontent-gwy-c391="" class="col-md-6">
+      <div class="row">
+        <div class="col-12">
+          <nb-card>
+            <nb-card-header> Décision sur le produit </nb-card-header>
+            <nb-card-body>
+              <h4>Donner votre décision</h4>
+              <ol class="mb-3">
+                <li>Consulter les documents précédents</li>
+                <li>Cocher votre avis sur le status de la non-conformité</li>
+                <li>Cocher votre décisions dans la table</li>
+                <li>Ecrire votre nom</li>
+                <li>Choisissez la date</li>
+                <li>Met votre signature</li>
+              </ol>
+            </nb-card-body>
+            <div class="mt-3 confirmation">
+              <button
+                (click)="onSubmitJustification()"
+                class="btn button-Decision blue effect"
+              >
+                Confirmer Décision
+              </button>
+            </div>
+          </nb-card>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<ng-template style="width: 70%;" #contentTemplate let-data>
+  <p style="width: 640px;">
+      {{ data.text }}
+  </p>
+  <div class="files-container mb-5">
+
+      <div class="importedFiles-container-gpt">
+        <div *ngIf="anomalieFiles.length > 0 ; else ifBlock1"></div>
+          <div *ngFor="let anomalieFile of anomalieFiles; let i = index" class="display-files-gpt">
+              <div class="display-files-gpt-container">
+                  <i style="font-size: 50px;" class="fa fa-file"></i>
+                  <div class="file-link-container">
+                    <i class="far fa-hand-point-right mr-2"></i><a target="_blank" (click)="downloadFile(anomalieFile.fileName)">{{ anomalieFile.fileName }}</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Add more team members as needed -->
+      </div>  
+      <ng-template #ifBlock1>
+        <div class="display-files-gpt">
+          <div class="display-files-gpt-container">
+              <i style="font-size: 80px;color: rgb(247, 0, 0);" class="fa fa-ban"></i>
+          </div>
+        </div>
+      </ng-template>
+  </div>
+</ng-template>

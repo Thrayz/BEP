@@ -1,0 +1,691 @@
+
+
+.image1 {
+    margin: 0px auto;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+.FENC-file p{
+    font-size: 13px;;
+    position: absolute;
+    color: rgb(5, 89, 199);
+    font-weight: 600;
+    line-height: 11px;
+}
+
+.container-style{
+    background-color: white;
+    border: 1px solid black;
+}
+
+.checkbox-decision{
+    font-weight: bold !important;
+    font-size: 18px !important;
+}
+
+.confirmation button{
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.button-Decision {
+    border-radius: 5px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .button-Decision:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .blue {
+    background-color: #3599e6;
+    box-shadow: 0px 5px 0px 0px #137fd2;
+  }
+  
+  .blue:hover {
+    background-color: #48b6ff;
+  }
+
+  ///////// FENC Style ////////////
+
+    .Numero{
+        color: red !important;
+        top: 70px;
+        left: 88px;
+    }
+  
+.code-article {
+    top: 116px;
+    left: 88px;
+}
+
+.part-number {
+    top: 116px;
+    left: 238px;
+}
+
+.designation {
+    top: 116px;
+    left: 448px;
+}
+
+.date-detection {
+    top: 116px;
+    left: 677px;
+}
+
+.lieu-detection {
+    top: 151px;
+    left: 62px;
+    width: 15vw;
+    word-break: break-word;
+}
+
+.qui-detecter {
+    top: 151px;
+    left: 193px;
+    width: 20.3vw;
+    word-break: break-word;
+}
+
+.sn {
+    top: 151px;
+    left: 368px;
+    width: 17vw;
+    word-break: break-word;
+}
+
+.of {
+    top: 151px;
+    left: 518px;
+    width: 15vw;
+    word-break: break-word;
+}
+
+.quantite {
+    top: 151px;
+    left: 665px;
+    width: 15vw;
+    word-break: break-word;
+    font-size: 14px !important;
+}
+
+.ecart-detecter {
+    top: 174px;
+    left: 214px;
+    width: 440px;
+    word-break: break-word;
+}
+
+.probleme {
+    top: 218px;
+    left: 105px;
+    width: 622px;
+    word-break: break-word;
+}
+
+.zone-impact {
+    top: 243px;
+    left: 297px;
+    width: 440px;
+    word-break: break-word;
+}
+
+.comment-ecart-detecter {
+    top: 268px;
+    left: 270px;
+    width: 440px;
+    word-break: break-word;
+}
+
+
+
+.nom-conformité-non {
+    top: 299px;
+    left: 285.5px;
+    width: 15vw;
+    word-break: break-word;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+.nom-conformité-oui {
+    top: 299px;
+    left: 529.5px;
+    width: 15vw;
+    word-break: break-word;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+.securisation-oui {
+    top: 319px;
+    left: 529.5px;
+    width: 15vw;
+    word-break: break-word;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+.securisation-non {
+    top: 319px;
+    left: 655.5px;
+    width: 15vw;
+    word-break: break-word;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+
+////////// Decision ////////
+
+.rebut {
+    top: 390px;
+    left: 77px;
+    width: 15vw;
+    word-break: break-word;
+}
+
+.retoucheDonnees {
+    top: 413.5px;
+    left: 77px;
+    width: 15vw;
+    word-break: break-word;
+}
+
+.retoucheDre {
+    top: 452px;
+    left: 76px;
+    width: 15vw;
+    word-break: break-word;
+}
+
+.aucuneAction {
+    top: 491px;
+    left: 77px;
+    width: 15vw;
+    word-break: break-word;
+}
+
+.refRetoucheDonnees {
+    top: 431px;
+    left: 171px;
+    width: 440px;
+    word-break: break-word;
+}
+
+.refDre {
+    top: 470px;
+    left: 105px;
+    width: 440px;
+    word-break: break-word;
+}
+
+.date-decision{
+    top: 557.5px;
+    left: 110px;
+    width: 440px;
+    word-break: break-word;
+}
+
+.nom-decision{
+    top: 537px;
+    left: 109px;
+    width: 440px;
+    word-break: break-word;
+}
+
+.signature-decision{
+    position: absolute;
+    top: 562px;
+    left: 147px;
+    width: 12%;
+}
+
+
+//////// Justification ///////
+
+.justification{
+    top: 410px;
+    left: 285px;
+    width: 238px;
+    word-break: break-word;
+
+}
+
+.limitation{
+    top: 483px;
+    left: 288px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.date-justification{
+    top: 555px;
+    left: 346px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.nom-justification{
+    top: 537px;
+    left: 347px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.signature-justification{
+    position: absolute;
+    top: 562px;
+    left: 397px;
+    width: 12%;
+}
+
+
+//////// maitrise ///////
+
+
+
+
+//////// Validation Navigabilité ///////
+
+.derogationProduit-oui{
+    top: 631px;
+    left: 488.5px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.derogationProduit-non{
+    top: 631px;
+    left: 546.5px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.justificationNav{
+    top: 652px;
+    left: 383.5px;
+    width: 372px;
+    word-break: break-word;
+}
+
+.or-oui{
+    top: 694px;
+    left: 453.5px;
+    width: 238px;
+    word-break: break-word;
+}
+.or-non{
+    top: 694px;
+    left: 512px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.date-validationNav{
+    top: 670px;
+    left: 106px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.nom-validationNav{
+    top: 654px;
+    left: 106px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.signature-validationNav{
+    position: absolute;
+    top: 666px;
+    left: 153px;
+    width: 12%;
+}
+
+
+//////// maitrise /////////
+
+.FENCTransmettre{
+    top: 387px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.inspection{
+    top: 407px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.planSurveillance{
+    top: 426px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.rdp{
+    top: 446px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.aucunSuivi{
+    top: 466px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.derogationProduitLivrable{
+    top: 486px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.nom-maitrise{
+    top: 536px;
+    left: 604px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.date-maitrise{
+    top: 554px;
+    left: 603px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.signature-maitrise{
+    position: absolute;
+    top: 558px;
+    left: 645px;
+    width: 13%;
+}
+
+////////////////////////////////////////////
+
+
+
+///////// DRE Style ////////////
+
+// titre Dre //
+
+.DRE-designation{
+    top: 128px;
+    left: 267px;
+    width: 135px;
+    word-break: break-word;
+}
+
+.DRE-codeArticle{
+    top: 128px;
+    left: 534px;
+    width: 179px;
+    word-break: break-word;
+}
+
+.DRE-pn{
+    top: 151px;
+    left: 267px;
+    width: 138px;
+    word-break: break-word;
+}
+
+.DRE-sn{
+    top: 152px;
+    left: 535px;
+    width: 173px;
+    word-break: break-word;
+}
+
+
+//Demande Retouche//
+
+.DRE-nonConformite{
+    top: 225px;
+    left: 358px;
+    width: 354px;
+    word-break: break-word;
+}
+
+.DRE-resumer{
+    top: 261px;
+    left: 359px;
+    width: 350px;
+    word-break: break-word;
+}
+
+.DRE-cds{
+    top: 310px;
+    left: 217px;
+    width: 85px;
+    word-break: break-word;
+}
+
+.DRE-montant{
+    top: 309px;
+    left: 425px;
+    width: 76px;
+    word-break: break-word;
+}
+
+.DRE-cout{
+    top: 310px;
+    left: 625px;
+    width: 80px;
+    word-break: break-word;
+}
+
+.DRE-demandeur{
+    top: 351px;
+    left: 314px;
+    width: 129px;
+    word-break: break-word;
+}
+
+.DRE-dr-date{
+    top: 348px;
+    left: 561px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.DRE-dr-signature{
+    position: absolute;
+    top: 346px;
+    left: 610px;
+    width: 11%;
+}
+
+//Verification Technique//
+
+.DRE-vt-process-non{
+    top: 469px;
+    left: 644px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-process-oui{
+    top: 470px;
+    left: 555px;
+    width: 252px;
+    font-weight: 900 !important;
+    word-break: break-word;
+}
+
+.DRE-vt-materiaux-oui{
+    top: 495.5px;
+    left: 555px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-materiaux-non{
+    top: 495.5px;
+    left: 644px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-interchangeabilité-oui{
+    top: 521px;
+    left: 555px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-interchangeabilité-non{
+    top: 521px;
+    left: 644px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-conclusion-oui{
+    top: 546px;
+    left: 555px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-conclusion-non{
+    top: 546px;
+    left: 644px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-retouche-oui{
+    top: 572px;
+    left: 555px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-retouche-non{
+    top: 572px;
+    left: 644px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-vt-commentaire{
+    top: 592px;
+    left: 249px;
+    width: 464px;
+    word-break: break-word;
+}
+
+.DRE-vt-verificateur{
+    top: 646px;
+    left: 264px;
+    width: 153px;
+    word-break: break-word;
+}
+
+.DRE-vt-date{
+    top: 641px;
+    left: 552px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.DRE-vt-signature{
+    position: absolute;
+    top: 651px;
+    left: 610px;
+    width: 11%;
+}
+
+//Prise En Compte//
+
+
+.DRE-pc-priseEnCompte-oui{
+    top: 794px;
+    left: 439px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-pc-priseEnCompte-non{
+    top: 794px;
+    left: 542px;
+    width: 238px;
+    font-weight: 900 !important;
+
+    word-break: break-word;
+}
+
+.DRE-pc-commentaire{
+    top: 820px;
+    left: 256px;
+    width: 452px;
+    word-break: break-word;
+}
+
+.DRE-pc-qualite{
+    top: 865px;
+    left: 260px;
+    width: 162px;
+    word-break: break-word;
+}
+
+
+.DRE-pc-date{
+    top: 865px;
+    left: 539px;
+    width: 238px;
+    word-break: break-word;
+}
+
+.DRE-pc-signature{
+    position: absolute;
+    top: 884px;
+    left: 610px;
+    width: 11%;
+}
+

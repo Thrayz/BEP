@@ -1,0 +1,9 @@
+///////// checkboxes //////////////
+.disabled-checkbox {
+    /* Adjust the opacity value to change the level of transparency */
+    pointer-events: none; /* Disable pointer events to prevent interaction */
+  }
+  
+  .disabled-checkbox label {
+    cursor: not-allowed; /* Set the cursor to "not-allowed" when hovering over the label */
+  }

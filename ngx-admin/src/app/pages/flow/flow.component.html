@@ -1,0 +1,130 @@
+<div class="mt-5 flow-card">
+  <p class="grid-h">Les utilisateurs qui ont fait des activités dans cette FENC :</p>
+        <div class="row show-grid mt-2 mr-4">
+          <div class="col-md-2">
+            <div>.col-md-1</div>
+          </div>
+          <div class="col-md-2">
+            <div>.col-md-1</div>
+          </div>
+          <div class="col-md-2">
+            <div>.col-md-1</div>
+          </div>
+          <div class="col-md-2">
+            <div>.col-md-1</div>
+          </div>
+        </div>
+        
+        <p class="grid-h">Flux en cours :</p>
+        <div class="row show-grid current-flow mt-2 mr-4">
+          <div class="d-flex align-items-center m-0 flow-container text-center">
+            <div class="level-1-current-flow-done-container">
+              <p class="level-1-current-flow-done rectangle" [ngStyle]="true ? { 'border': '1px solid rgb(26, 255, 0)' } : {}">Nouvelle anomalie</p>
+              <p class="level-1-current-flow-done-service rectangle-currentFlow-service">qualite Produit</p>
+            </div>
+            <div class="level-1-current-flow-doing-container">
+              <p class="level-1-current-flow-doing rectangle" [ngStyle]="true ? { 'border': '1px solid rgb(255, 0, 0)' } : {}">En cours</p>
+              <p class="level-1-current-flow-doing-service rectangle-currentFlow-service">methode</p>
+            </div>
+            <div class="level-1-current-flow-waiting-container">
+              <p class="level-1-current-flow-waiting rectangle" [ngStyle]="true ? { 'border': '1px solid rgb(26, 255, 0)' } : {}">Cloturer</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="grid-h mt-5">Actualité de flux :</p>
+        <div class="calque">
+          <div class="d-flex justify-content-center calque-container">
+            <div class="flow-container text-center">
+                <p class="level-1 rectangle">Identifier l'écart</p>
+                <p class="level-1 rectangle">Confirmation de non conformité</p>
+                <p class="level-1 rectangle" style="background: rgba(198, 217, 241, 0.7)">Décision production</p>
+                <ol class="level-2-wrapper">
+                  <li>
+                    <p class="level-2 rectangle">Aucune action sur le produit</p>
+                    <ol class="level-3-wrapper">
+                      <li>
+                        <p class="level-3 rectangle">Decision Bureau d'étude</p>
+                        <ol class="level-4-parent-grid2-wrapper">
+                          <p class="level-4-parent-grid2 rectangle">Décision navigabilité</p>
+                        </ol>
+                        <ol class="level-4-grid2-wrapper">
+                          <li>
+                            <p class="level-4-grid2 rectangle">Dérogation</p>
+                            <ol class="level-4-wrapper">
+                              <li>
+                                <p class="level-5 rectangle">Décision qualité programme</p>
+                              </li>
+                            </ol>
+                          </li>
+                          <li>
+                            <p class="level-4 rectangle">Sans dérogation</p>
+                            <ol class="level-4-wrapper">
+                              <li>
+                                <p class="level-5 rectangle">Décision qualité produit</p>
+                              </li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p class="level-2 rectangle">Retouche selon données approuvées</p>
+                    <ol class="level-3-wrapper">
+                      <li>
+                        <p class="level-3 rectangle">Décision BE/méthode</p>
+                        <ol class="level-4-wrapper">
+                          <li>
+                            <p class="level-5 rectangle">Qualité produit</p>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p class="level-2 rectangle">Retouche selon DRE</p>
+                    <ol class="level-3-parent-grid2-wrapper">
+                        <p class="level-3-parent-grid2 rectangle">Décision bureau d'étude</p>
+                    </ol>
+                    <ol class="level-3-grid2-wrapper">
+                      <li>
+                        <p class="level-3-grid2 rectangle">Impact définition</p>
+                        <ol class="level-4-wrapper">
+                          <li>
+                            <p class="level-4 rectangle">Décision navigabilité</p>
+                          </li>
+                          <li>
+                            <p class="level-5 rectangle">Décision qualité produit</p>
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p class="level-3 rectangle">Sans impact définition</p>
+                        <ol class="level-4-wrapper">
+                          <li>
+                            <p class="level-5 rectangle">Décision qualité produit</p>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p class="level-2 rectangle">Rebut</p>
+                    <ol class="level-3-wrapper">
+                      <li>
+                        <p class="level-3 rectangle">Décision bureau d'étude</p>
+                        <ol class="level-4-wrapper">
+                          <li>
+                            <p class="level-5 rectangle">Décision qualité produit</p>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </div>
+        </div>
+        </div>
+        
+</div>

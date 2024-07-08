@@ -1,0 +1,28 @@
+<div class="container">
+    
+    <div class="title-container">
+        <div class="title">Pas de signature</div>
+    </div>
+    <form class="login-form">
+        <div class="info">
+            <p class="mt-5">Ajouter votre signature pour être utilisé tout au long de votre utilisation de cette plateform :</p>
+            <div class="row d-flex align-items-center">
+                <div class="col ">
+                    <span>Cette signature n'est pas changeable !!</span>
+                </div>
+                <div class="col ">
+                    <div class="pad-container" [style.width]="width+'px'" [style.height]="height+'px'">
+                        <ngx-signaturepad #signaturePad [options]="options" [width]="width" [height]="height"></ngx-signaturepad>
+                    </div>
+                    <div class="d-flex align-items-center float-right mt-1">
+                        <button (click)="clear()" class="btn btn-outline-secondary">Effacer<i class="fas fa-backspace ml-2" style="font-size: 15px;"></i></button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <button (click)="saveSignature()" class="button-login">Continuer</button>
+    </form>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="signature-table">
+  <div class="row table-row">
+    <div class="col text-center">{{ titre }}</div>
+  </div>
+  <div class="row table-row">
+    <div class="col">
+      <form [formGroup]="signatureFenc">
+        <div class="d-flex signature-name-field-container">
+          <p>Nom :</p>
+          <div
+            class="ml-2 signature-name-field"
+          >
+            {{currentUser.nom + " " + currentUser.prenom}}
+          </div>
+        </div>
+        <div class="d-flex align-items-center qualite-name-field-container">
+          <p>
+            Date
+            <i
+              class="far fa-calendar-alt icon-calender-signature ml-1"
+              (click)="openDatePicker(datePicker)"
+            ></i>
+            :
+            {{ currentDate | date:'dd/MM/yyyy' }}
+          </p>
+        </div>
+        <mat-datepicker #datePicker></mat-datepicker>
+        <div class="d-flex signature-field-container"><p>Signature :</p>
+          <img [src]="getImageUrl(currentUser.signature)" alt="" >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
